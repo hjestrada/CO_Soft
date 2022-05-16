@@ -22,10 +22,11 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Usuarios")
-        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Fincas")
-        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Variedades")
-        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Muestras")
+        Me.components = New System.ComponentModel.Container()
+        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Usuarios")
+        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Fincas")
+        Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Variedades")
+        Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Muestras")
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -34,6 +35,9 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TreeView1 = New System.Windows.Forms.TreeView()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -72,12 +76,13 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 171)
+        Me.GroupBox1.Location = New System.Drawing.Point(22, 184)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(210, 100)
+        Me.GroupBox1.Size = New System.Drawing.Size(210, 136)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Configuración de Puerto"
@@ -95,17 +100,17 @@ Partial Class Form1
         'TreeView1
         '
         Me.TreeView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TreeView1.Location = New System.Drawing.Point(12, 286)
+        Me.TreeView1.Location = New System.Drawing.Point(22, 353)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode1.Name = "Nodo0"
-        TreeNode1.Text = "Usuarios"
-        TreeNode2.Name = "Nodo1"
-        TreeNode2.Text = "Fincas"
-        TreeNode3.Name = "Nodo2"
-        TreeNode3.Text = "Variedades"
-        TreeNode4.Name = "Nodo3"
-        TreeNode4.Text = "Muestras"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3, TreeNode4})
+        TreeNode5.Name = "Nodo0"
+        TreeNode5.Text = "Usuarios"
+        TreeNode6.Name = "Nodo1"
+        TreeNode6.Text = "Fincas"
+        TreeNode7.Name = "Nodo2"
+        TreeNode7.Text = "Variedades"
+        TreeNode8.Name = "Nodo3"
+        TreeNode8.Text = "Muestras"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode5, TreeNode6, TreeNode7, TreeNode8})
         Me.TreeView1.Size = New System.Drawing.Size(210, 267)
         Me.TreeView1.TabIndex = 2
         '
@@ -119,6 +124,20 @@ Partial Class Form1
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 13
         Me.PictureBox3.TabStop = False
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(11, 89)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(183, 32)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "-----"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -148,4 +167,7 @@ Partial Class Form1
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents TreeView1 As TreeView
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents SerialPort1 As IO.Ports.SerialPort
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Button1 As Button
 End Class
