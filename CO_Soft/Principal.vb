@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class Principal
 
     Public EstadoConx As String = "Desconectado"
     Public estado As Boolean = False
@@ -10,7 +10,6 @@
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         GetSerialPortNames()
         If SerialPort1.IsOpen Then
-
             EstadoConx = "Conectado"
         Else
             EstadoConx = "Desconectado"
@@ -91,9 +90,6 @@
                 estado = True
                 EstadoConx = "Conectado"
 
-
-
-
             Else
                 Dim opc As DialogResult = MessageBox.Show("¿Desea cerrar la conexión con el Dispositivo?", ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information)
 
@@ -107,5 +103,18 @@
 
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        usuarios.MdiParent = Me
+        usuarios.Show()
+
     End Sub
 End Class
