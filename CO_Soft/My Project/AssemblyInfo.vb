@@ -8,14 +8,14 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("CO_Soft")>
+<Assembly: AssemblyTitle("Sofware de Fermentacion")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("CO_Soft")>
+<Assembly: AssemblyProduct("Soft_Fermentacion")>
 <Assembly: AssemblyCopyright("Copyright ©  2022")>
 <Assembly: AssemblyTrademark("")>
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(True)>
 
 'El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
 <Assembly: Guid("3c7cd94b-8a81-4244-8dcb-2ea508a304ad")>

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9D83AC51-D8CA-4F75-9388-0944A67F60A6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>CO_Soft.My.MyApplication</StartupObject>
-    <RootNamespace>CO_Soft</RootNamespace>
+    <StartupObject>Soft_Fermentacion.My.MyApplication</StartupObject>
+    <RootNamespace>Soft_Fermentacion</RootNamespace>
     <AssemblyName>Sofware de Fermentacion</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
@@ -50,6 +50,9 @@
   <PropertyGroup>
     <ApplicationIcon>1045px-Sena_Colombia_logo.svg.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -76,6 +79,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fincas.Designer.vb">
+      <DependentUpon>fincas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="fincas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -105,8 +114,17 @@
     <Compile Include="usuarios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="variedad.Designer.vb">
+      <DependentUpon>variedad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="variedad.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="fincas.resx">
+      <DependentUpon>fincas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
@@ -119,8 +137,12 @@
     <EmbeddedResource Include="usuarios.resx">
       <DependentUpon>usuarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="variedad.resx">
+      <DependentUpon>variedad.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

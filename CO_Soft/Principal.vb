@@ -8,7 +8,7 @@
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        GetSerialPortNames()
+        'GetSerialPortNames()
         If SerialPort1.IsOpen Then
             EstadoConx = "Conectado"
         Else
@@ -81,7 +81,23 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Me.Close()
+
+    End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+        usuarios.MdiParent = Me
+        usuarios.Show()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Try
 
             If Button1.Text = "Conectar" Then
@@ -91,7 +107,7 @@
                 EstadoConx = "Conectado"
 
             Else
-                Dim opc As DialogResult = MessageBox.Show("¿Desea cerrar la conexión con el Dispositivo?", ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+                Dim opc As DialogResult = MessageBox.Show("¿Desea cerrar la conexión con el Dispositivo " & SerialPort1.PortName & "?", ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information)
 
                 If SerialPort1.IsOpen Then
                     SerialPort1.Close()
@@ -99,22 +115,24 @@
 
                 End If
                 Button1.Text = "Conectar"
+                GetSerialPortNames()
             End If
 
         Catch ex As Exception
         End Try
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        fincas.MdiParent = Me
+        fincas.Show()
     End Sub
 
+    Private Sub Principal_Load(sender As Object, e As EventArgs) Handles Me.Load
+        GetSerialPortNames()
+    End Sub
 
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
-        usuarios.MdiParent = Me
-        usuarios.Show()
-
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        variedad.MdiParent = Me
+        variedad.Show()
     End Sub
 End Class

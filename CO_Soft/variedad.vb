@@ -1,5 +1,4 @@
 ﻿
-
 Option Strict Off
 Option Explicit On
 
@@ -9,10 +8,10 @@ Imports System.Data.SqlClient
 Imports System.IO
 
 
-Public Class usuarios
 
 
 
+Public Class variedad
 
     'Necesarios para redondear formulario
     Public SD As Integer
@@ -41,16 +40,14 @@ Public Class usuarios
 
     End Function
 
+
+
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Me.Close()
 
     End Sub
 
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
-    End Sub
-
-    Private Sub usuarios_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub variedad_Load(sender As Object, e As EventArgs) Handles Me.Load
         'Necesario para redondear formulario
         Me.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width - 2, Height - 2, 20, 20))
     End Sub
