@@ -88,9 +88,15 @@
 
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        Me.Close()
 
+        Dim ask As MsgBoxResult = MsgBox("¿Desea cerrar la conexión con el Dispositivo  " & SerialPort1.PortName & " y salir?", MsgBoxStyle.YesNo)
+        If ask = MsgBoxResult.Yes Then
+            SerialPort1.Close()
+            Me.Close()
+        End If
     End Sub
+
+
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
         usuarios.MdiParent = Me
@@ -99,23 +105,21 @@
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-
             If Button1.Text = "Conectar" Then
                 Button1.Text = "Desconectar"
                 Setup_Puerto_Serie()
                 estado = True
                 EstadoConx = "Conectado"
-
             Else
-                Dim opc As DialogResult = MessageBox.Show("¿Desea cerrar la conexión con el Dispositivo " & SerialPort1.PortName & "?", ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information)
 
-                If SerialPort1.IsOpen Then
+                Dim ask As MsgBoxResult = MsgBox("¿Desea cerrar la conexión con el Dispositivo  " & SerialPort1.PortName & " ?", MsgBoxStyle.YesNo)
+                If ask = MsgBoxResult.Yes Then
                     SerialPort1.Close()
                     EstadoConx = "Desconectado"
-
                 End If
                 Button1.Text = "Conectar"
                 GetSerialPortNames()
+
             End If
 
         Catch ex As Exception
@@ -134,5 +138,15 @@
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         variedad.MdiParent = Me
         variedad.Show()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        muestras.MdiParent = Me
+        muestras.Show()
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        lecturas.MdiParent = Me
+        lecturas.Show()
     End Sub
 End Class

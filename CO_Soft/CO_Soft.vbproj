@@ -85,6 +85,18 @@
     <Compile Include="fincas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="lecturas.Designer.vb">
+      <DependentUpon>lecturas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="lecturas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="muestras.Designer.vb">
+      <DependentUpon>muestras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="muestras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +136,12 @@
   <ItemGroup>
     <EmbeddedResource Include="fincas.resx">
       <DependentUpon>fincas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lecturas.resx">
+      <DependentUpon>lecturas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="muestras.resx">
+      <DependentUpon>muestras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
