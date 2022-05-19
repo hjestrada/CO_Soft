@@ -46,6 +46,8 @@ Partial Class usuarios
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,7 +59,7 @@ Partial Class usuarios
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(175, 75)
+        Me.TextBox1.Location = New System.Drawing.Point(179, 90)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(267, 26)
         Me.TextBox1.TabIndex = 1
@@ -66,7 +68,7 @@ Partial Class usuarios
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(64, 80)
+        Me.Label2.Location = New System.Drawing.Point(68, 95)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(85, 20)
         Me.Label2.TabIndex = 2
@@ -76,7 +78,7 @@ Partial Class usuarios
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(64, 115)
+        Me.Label3.Location = New System.Drawing.Point(68, 130)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(87, 20)
         Me.Label3.TabIndex = 3
@@ -85,7 +87,7 @@ Partial Class usuarios
         'TextBox2
         '
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(175, 110)
+        Me.TextBox2.Location = New System.Drawing.Point(179, 125)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(267, 26)
         Me.TextBox2.TabIndex = 4
@@ -94,7 +96,7 @@ Partial Class usuarios
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(64, 155)
+        Me.Label4.Location = New System.Drawing.Point(68, 170)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(89, 20)
         Me.Label4.TabIndex = 5
@@ -104,7 +106,7 @@ Partial Class usuarios
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(64, 194)
+        Me.Label5.Location = New System.Drawing.Point(68, 209)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(58, 20)
         Me.Label5.TabIndex = 6
@@ -114,7 +116,7 @@ Partial Class usuarios
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(64, 232)
+        Me.Label6.Location = New System.Drawing.Point(68, 247)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(84, 20)
         Me.Label6.TabIndex = 7
@@ -123,7 +125,7 @@ Partial Class usuarios
         'TextBox3
         '
         Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(175, 150)
+        Me.TextBox3.Location = New System.Drawing.Point(179, 165)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(267, 26)
         Me.TextBox3.TabIndex = 8
@@ -131,7 +133,7 @@ Partial Class usuarios
         'TextBox4
         '
         Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(175, 189)
+        Me.TextBox4.Location = New System.Drawing.Point(179, 204)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(267, 26)
         Me.TextBox4.TabIndex = 9
@@ -195,7 +197,7 @@ Partial Class usuarios
         Me.TableLayoutPanel1.Controls.Add(Me.Button3, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.PictureBox1, 1, 0)
         Me.TableLayoutPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(469, 75)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(469, 59)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 4
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
@@ -267,7 +269,7 @@ Partial Class usuarios
         'MaskedTextBox1
         '
         Me.MaskedTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(175, 227)
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(179, 242)
         Me.MaskedTextBox1.Mask = "000-000-0000"
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
         Me.MaskedTextBox1.Size = New System.Drawing.Size(267, 26)
@@ -319,11 +321,31 @@ Partial Class usuarios
         Me.Button5.TabIndex = 3
         Me.Button5.UseVisualStyleBackColor = True
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(72, 59)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(70, 20)
+        Me.Label7.TabIndex = 116
+        Me.Label7.Text = "Cédula:"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5.Location = New System.Drawing.Point(179, 59)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(267, 26)
+        Me.TextBox5.TabIndex = 117
+        '
         'usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(689, 334)
+        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label3)
@@ -376,4 +398,6 @@ Partial Class usuarios
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Button5 As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents TextBox5 As TextBox
 End Class
