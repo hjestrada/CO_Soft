@@ -35,6 +35,7 @@ Public Class lecturas
         TextBox1.Text = "35"
         TextBox2.Text = "100"
         TextBox3.Text = "7"
+        Label6.Text = Now
 
     End Sub
 
@@ -44,6 +45,11 @@ Public Class lecturas
     End Sub
 
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Label6.Text = Now
 
     End Sub
 End Class
