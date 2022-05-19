@@ -49,33 +49,40 @@ Partial Class lecturas
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Chart3 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.PBDesconectado = New System.Windows.Forms.PictureBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.PBConectado = New System.Windows.Forms.PictureBox()
+        Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.Chart3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.PBDesconectado, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.PBConectado, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -129,7 +136,7 @@ Partial Class lecturas
         Me.TextBox3.BackColor = System.Drawing.SystemColors.MenuText
         Me.TextBox3.Font = New System.Drawing.Font("Calculator", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox3.ForeColor = System.Drawing.Color.LawnGreen
-        Me.TextBox3.Location = New System.Drawing.Point(918, 82)
+        Me.TextBox3.Location = New System.Drawing.Point(958, 82)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ReadOnly = True
         Me.TextBox3.Size = New System.Drawing.Size(246, 118)
@@ -140,7 +147,7 @@ Partial Class lecturas
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(1017, 48)
+        Me.Label3.Location = New System.Drawing.Point(1057, 48)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 31)
         Me.Label3.TabIndex = 7
@@ -150,7 +157,7 @@ Partial Class lecturas
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(494, 48)
+        Me.Label2.Location = New System.Drawing.Point(534, 48)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(252, 31)
         Me.Label2.TabIndex = 6
@@ -160,7 +167,7 @@ Partial Class lecturas
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(122, 48)
+        Me.Label1.Location = New System.Drawing.Point(162, 48)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(169, 31)
         Me.Label1.TabIndex = 5
@@ -171,7 +178,7 @@ Partial Class lecturas
         Me.TextBox2.BackColor = System.Drawing.SystemColors.MenuText
         Me.TextBox2.Font = New System.Drawing.Font("Calculator", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.ForeColor = System.Drawing.Color.LawnGreen
-        Me.TextBox2.Location = New System.Drawing.Point(500, 82)
+        Me.TextBox2.Location = New System.Drawing.Point(540, 82)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(246, 118)
@@ -183,7 +190,7 @@ Partial Class lecturas
         Me.TextBox1.BackColor = System.Drawing.SystemColors.MenuText
         Me.TextBox1.Font = New System.Drawing.Font("Calculator", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.LawnGreen
-        Me.TextBox1.Location = New System.Drawing.Point(82, 82)
+        Me.TextBox1.Location = New System.Drawing.Point(122, 82)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(246, 118)
@@ -210,7 +217,7 @@ Partial Class lecturas
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(752, 127)
+        Me.Label5.Location = New System.Drawing.Point(792, 127)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(157, 73)
         Me.Label5.TabIndex = 9
@@ -220,7 +227,7 @@ Partial Class lecturas
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(334, 127)
+        Me.Label4.Location = New System.Drawing.Point(374, 127)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(104, 73)
         Me.Label4.TabIndex = 8
@@ -254,9 +261,13 @@ Partial Class lecturas
         Me.Chart3.Legends.Add(Legend1)
         Me.Chart3.Location = New System.Drawing.Point(3, 383)
         Me.Chart3.Name = "Chart3"
+        Series1.BorderWidth = 3
         Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series1.Color = System.Drawing.Color.Black
         Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
+        Series1.Name = "pH"
+        Series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
         Me.Chart3.Series.Add(Series1)
         Me.Chart3.Size = New System.Drawing.Size(656, 374)
         Me.Chart3.TabIndex = 2
@@ -275,6 +286,7 @@ Partial Class lecturas
         Series2.BorderWidth = 3
         Series2.ChartArea = "ChartArea1"
         Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series2.Color = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Series2.Legend = "Legend1"
         Series2.MarkerBorderColor = System.Drawing.Color.White
         Series2.MarkerBorderWidth = 5
@@ -285,57 +297,30 @@ Partial Class lecturas
         Me.Chart1.TabIndex = 0
         Me.Chart1.Text = "Chart1"
         '
-        'Chart2
-        '
-        ChartArea3.Name = "ChartArea1"
-        Me.Chart2.ChartAreas.Add(ChartArea3)
-        Me.Chart2.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend3.Name = "Legend1"
-        Me.Chart2.Legends.Add(Legend3)
-        Me.Chart2.Location = New System.Drawing.Point(665, 3)
-        Me.Chart2.Name = "Chart2"
-        Series3.ChartArea = "ChartArea1"
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series1"
-        Me.Chart2.Series.Add(Series3)
-        Me.Chart2.Size = New System.Drawing.Size(657, 374)
-        Me.Chart2.TabIndex = 1
-        Me.Chart2.Text = "Chart2"
-        '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.GroupBox2)
         Me.Panel3.Controls.Add(Me.GroupBox1)
         Me.Panel3.Controls.Add(Me.Panel5)
+        Me.Panel3.Controls.Add(Me.GroupBox3)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(665, 383)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(657, 374)
         Me.Panel3.TabIndex = 3
         '
-        'Panel5
+        'GroupBox2
         '
-        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(3, Byte), Integer))
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(0, 0)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(657, 37)
-        Me.Panel5.TabIndex = 168
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.SystemColors.Control
-        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime
-        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(29, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(172, 33)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(82, 74)
-        Me.Button3.TabIndex = 12
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.Button3)
+        Me.GroupBox2.Controls.Add(Me.Button2)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 233)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(636, 126)
+        Me.GroupBox2.TabIndex = 174
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Acciones"
         '
         'Button1
         '
@@ -346,52 +331,41 @@ Partial Class lecturas
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(29, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(84, 33)
+        Me.Button1.Location = New System.Drawing.Point(210, 25)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(82, 74)
         Me.Button1.TabIndex = 10
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'Timer1
+        'Button3
         '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 1000
+        Me.Button3.BackColor = System.Drawing.SystemColors.Control
+        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime
+        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Location = New System.Drawing.Point(298, 25)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(82, 74)
+        Me.Button3.TabIndex = 12
+        Me.Button3.UseVisualStyleBackColor = False
         '
-        'ComboBox3
+        'Button2
         '
-        Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(97, 29)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(267, 28)
-        Me.ComboBox3.TabIndex = 169
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(97, 63)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(267, 28)
-        Me.ComboBox1.TabIndex = 170
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(97, 97)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(267, 28)
-        Me.ComboBox2.TabIndex = 171
-        '
-        'ComboBox4
-        '
-        Me.ComboBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(97, 131)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(267, 28)
-        Me.ComboBox4.TabIndex = 172
+        Me.Button2.BackColor = System.Drawing.SystemColors.Control
+        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(386, 25)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(82, 74)
+        Me.Button2.TabIndex = 11
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'GroupBox1
         '
@@ -411,25 +385,15 @@ Partial Class lecturas
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Iniciales"
         '
-        'Label7
+        'Label10
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(17, 37)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(64, 20)
-        Me.Label7.TabIndex = 173
-        Me.Label7.Text = "Usuario"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(17, 71)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(48, 20)
-        Me.Label8.TabIndex = 174
-        Me.Label8.Text = "Finca"
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(17, 139)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(67, 20)
+        Me.Label10.TabIndex = 176
+        Me.Label10.Text = "Muestra"
         '
         'Label9
         '
@@ -441,43 +405,143 @@ Partial Class lecturas
         Me.Label9.TabIndex = 175
         Me.Label9.Text = "Variedad"
         '
-        'Label10
+        'Label8
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(17, 139)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(67, 20)
-        Me.Label10.TabIndex = 176
-        Me.Label10.Text = "Muestra"
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(17, 71)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(48, 20)
+        Me.Label8.TabIndex = 174
+        Me.Label8.Text = "Finca"
         '
-        'GroupBox2
+        'Label7
         '
-        Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.Button3)
-        Me.GroupBox2.Controls.Add(Me.Button2)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 233)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(402, 126)
-        Me.GroupBox2.TabIndex = 174
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Acciones"
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(17, 37)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(64, 20)
+        Me.Label7.TabIndex = 173
+        Me.Label7.Text = "Usuario"
         '
-        'Button2
+        'ComboBox3
         '
-        Me.Button2.BackColor = System.Drawing.SystemColors.Control
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime
-        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(29, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(260, 33)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(82, 74)
-        Me.Button2.TabIndex = 11
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(97, 29)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(267, 28)
+        Me.ComboBox3.TabIndex = 169
+        '
+        'ComboBox4
+        '
+        Me.ComboBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Location = New System.Drawing.Point(97, 131)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(267, 28)
+        Me.ComboBox4.TabIndex = 172
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(97, 63)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(267, 28)
+        Me.ComboBox1.TabIndex = 170
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(97, 97)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(267, 28)
+        Me.ComboBox2.TabIndex = 171
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(657, 37)
+        Me.Panel5.TabIndex = 168
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
+        'Label11
+        '
+        Me.Label11.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(69, 136)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(27, 20)
+        Me.Label11.TabIndex = 176
+        Me.Label11.Text = "---"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PBDesconectado
+        '
+        Me.PBDesconectado.Image = CType(resources.GetObject("PBDesconectado.Image"), System.Drawing.Image)
+        Me.PBDesconectado.Location = New System.Drawing.Point(73, 37)
+        Me.PBDesconectado.Name = "PBDesconectado"
+        Me.PBDesconectado.Size = New System.Drawing.Size(82, 96)
+        Me.PBDesconectado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PBDesconectado.TabIndex = 175
+        Me.PBDesconectado.TabStop = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.PBConectado)
+        Me.GroupBox3.Controls.Add(Me.PBDesconectado)
+        Me.GroupBox3.Controls.Add(Me.Label11)
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.Location = New System.Drawing.Point(426, 43)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(222, 184)
+        Me.GroupBox3.TabIndex = 177
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Estado "
+        '
+        'PBConectado
+        '
+        Me.PBConectado.Image = CType(resources.GetObject("PBConectado.Image"), System.Drawing.Image)
+        Me.PBConectado.Location = New System.Drawing.Point(73, 37)
+        Me.PBConectado.Name = "PBConectado"
+        Me.PBConectado.Size = New System.Drawing.Size(82, 96)
+        Me.PBConectado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PBConectado.TabIndex = 177
+        Me.PBConectado.TabStop = False
+        '
+        'Chart2
+        '
+        ChartArea3.Name = "ChartArea1"
+        Me.Chart2.ChartAreas.Add(ChartArea3)
+        Me.Chart2.Dock = System.Windows.Forms.DockStyle.Fill
+        Legend3.Name = "Legend1"
+        Me.Chart2.Legends.Add(Legend3)
+        Me.Chart2.Location = New System.Drawing.Point(665, 3)
+        Me.Chart2.Name = "Chart2"
+        Series3.BorderWidth = 3
+        Series3.ChartArea = "ChartArea1"
+        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series3.Color = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Series3.Legend = "Legend1"
+        Series3.Name = "Dióxido de Carbono"
+        Series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
+        Me.Chart2.Series.Add(Series3)
+        Me.Chart2.Size = New System.Drawing.Size(657, 374)
+        Me.Chart2.TabIndex = 1
+        Me.Chart2.Text = "Chart2"
         '
         'lecturas
         '
@@ -502,11 +566,15 @@ Partial Class lecturas
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.Chart3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
+        CType(Me.PBDesconectado, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        CType(Me.PBConectado, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -525,7 +593,6 @@ Partial Class lecturas
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Chart3 As DataVisualization.Charting.Chart
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
-    Friend WithEvents Chart2 As DataVisualization.Charting.Chart
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Button3 As Button
@@ -543,4 +610,9 @@ Partial Class lecturas
     Friend WithEvents Label8 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Button2 As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents PBDesconectado As PictureBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents PBConectado As PictureBox
+    Friend WithEvents Chart2 As DataVisualization.Charting.Chart
 End Class

@@ -36,6 +36,7 @@ Public Class lecturas
         TextBox2.Text = "100"
         TextBox3.Text = "7"
         Label6.Text = Now
+        iconoDesconectado()
 
     End Sub
 
@@ -50,6 +51,31 @@ Public Class lecturas
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Label6.Text = Now
+        If Principal.SerialPort1.IsOpen Then
+            iconoConectado()
 
+        Else
+            iconoDesconectado()
+
+
+        End If
     End Sub
+
+
+    Sub iconoConectado()
+        PBConectado.Visible = True
+        PBDesconectado.Visible = False
+        Label11.Text = "Conectado"
+        Label11.ForeColor = Color.Green
+    End Sub
+    Sub iconoDesconectado()
+        PBConectado.Visible = False
+        PBDesconectado.Visible = True
+        Label11.Text = "Desconectado"
+        Label11.ForeColor = Color.Red
+    End Sub
+
+
+
+
 End Class

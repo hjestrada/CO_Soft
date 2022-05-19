@@ -69,7 +69,7 @@
                 End If
             Next
             If ComboBox1.Items.Count >= 1 Then
-                ComboBox1.Text = ComboBox1.Items(0)
+                ComboBox1.Text = ComboBox1.Items(1)
 
             Else
                 ComboBox1.Text = ""
@@ -116,6 +116,7 @@
                 If ask = MsgBoxResult.Yes Then
                     SerialPort1.Close()
                     EstadoConx = "Desconectado"
+
                 End If
                 Button1.Text = "Conectar"
                 GetSerialPortNames()

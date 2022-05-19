@@ -49,7 +49,6 @@ Partial Class Principal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -61,7 +60,6 @@ Partial Class Principal
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Timer1
@@ -106,7 +104,6 @@ Partial Class Principal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.GroupBox4)
         Me.Panel1.Controls.Add(Me.GroupBox3)
         Me.Panel1.Controls.Add(Me.GroupBox2)
@@ -117,14 +114,14 @@ Partial Class Principal
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 37)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(257, 1100)
+        Me.Panel1.Size = New System.Drawing.Size(261, 1100)
         Me.Panel1.TabIndex = 118
         '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.TableLayoutPanel3)
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(15, 680)
+        Me.GroupBox4.Location = New System.Drawing.Point(16, 691)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(234, 109)
         Me.GroupBox4.TabIndex = 122
@@ -163,7 +160,7 @@ Partial Class Principal
         '
         Me.GroupBox3.Controls.Add(Me.TableLayoutPanel2)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(15, 565)
+        Me.GroupBox3.Location = New System.Drawing.Point(16, 576)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(234, 109)
         Me.GroupBox3.TabIndex = 121
@@ -202,7 +199,7 @@ Partial Class Principal
         '
         Me.GroupBox2.Controls.Add(Me.TableLayoutPanel1)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(16, 326)
+        Me.GroupBox2.Location = New System.Drawing.Point(16, 337)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(234, 233)
         Me.GroupBox2.TabIndex = 120
@@ -292,7 +289,7 @@ Partial Class Principal
         '
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(3, Byte), Integer))
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel4.Location = New System.Drawing.Point(255, 0)
+        Me.Panel4.Location = New System.Drawing.Point(259, 0)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(2, 1100)
         Me.Panel4.TabIndex = 114
@@ -301,7 +298,7 @@ Partial Class Principal
         '
         Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(34, 1024)
+        Me.PictureBox3.Location = New System.Drawing.Point(20, 1025)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(204, 52)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -316,7 +313,7 @@ Partial Class Principal
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(16, 184)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(233, 136)
+        Me.GroupBox1.Size = New System.Drawing.Size(233, 147)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Configuración de Puerto"
@@ -357,20 +354,12 @@ Partial Class Principal
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(47, 26)
+        Me.PictureBox1.Location = New System.Drawing.Point(66, 26)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(148, 140)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Location = New System.Drawing.Point(75, 835)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(65, 67)
-        Me.PictureBox2.TabIndex = 120
-        Me.PictureBox2.TabStop = False
         '
         'Principal
         '
@@ -400,7 +389,6 @@ Partial Class Principal
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -429,5 +417,4 @@ Partial Class Principal
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents Button8 As Button
-    Friend WithEvents PictureBox2 As PictureBox
 End Class
