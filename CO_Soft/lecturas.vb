@@ -32,10 +32,18 @@ Public Class lecturas
     Private Sub lecturas_Load(sender As Object, e As EventArgs) Handles Me.Load
         'Necesario para redondear formulario
         Me.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width - 2, Height - 2, 20, 20))
+        TextBox1.Text = "35"
+        TextBox2.Text = "100"
+        TextBox3.Text = "7"
+
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Me.Close()
+
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
 
     End Sub
 End Class

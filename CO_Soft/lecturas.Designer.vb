@@ -22,11 +22,20 @@ Partial Class lecturas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(lecturas))
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -34,8 +43,24 @@ Partial Class lecturas
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Chart3 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Chart3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -44,7 +69,7 @@ Partial Class lecturas
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 1037)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1889, 37)
+        Me.Panel1.Size = New System.Drawing.Size(1325, 37)
         Me.Panel1.TabIndex = 166
         '
         'Button5
@@ -56,7 +81,7 @@ Partial Class lecturas
         Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.Location = New System.Drawing.Point(1856, 3)
+        Me.Button5.Location = New System.Drawing.Point(1292, 3)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(30, 30)
         Me.Button5.TabIndex = 3
@@ -69,30 +94,26 @@ Partial Class lecturas
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1889, 37)
+        Me.Panel2.Size = New System.Drawing.Size(1325, 37)
         Me.Panel2.TabIndex = 167
-        '
-        'Panel3
-        '
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel3.Location = New System.Drawing.Point(0, 37)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(59, 1000)
-        Me.Panel3.TabIndex = 168
         '
         'TextBox3
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(671, 110)
+        Me.TextBox3.BackColor = System.Drawing.SystemColors.MenuText
+        Me.TextBox3.Font = New System.Drawing.Font("Calculator", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3.ForeColor = System.Drawing.Color.LawnGreen
+        Me.TextBox3.Location = New System.Drawing.Point(918, 82)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(246, 116)
+        Me.TextBox3.ReadOnly = True
+        Me.TextBox3.Size = New System.Drawing.Size(246, 118)
         Me.TextBox3.TabIndex = 6
+        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(719, 76)
+        Me.Label3.Location = New System.Drawing.Point(1017, 48)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 31)
         Me.Label3.TabIndex = 7
@@ -102,7 +123,7 @@ Partial Class lecturas
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(374, 76)
+        Me.Label2.Location = New System.Drawing.Point(494, 48)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(252, 31)
         Me.Label2.TabIndex = 6
@@ -112,7 +133,7 @@ Partial Class lecturas
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(42, 76)
+        Me.Label1.Location = New System.Drawing.Point(122, 48)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(169, 31)
         Me.Label1.TabIndex = 5
@@ -120,22 +141,32 @@ Partial Class lecturas
         '
         'TextBox2
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(380, 110)
+        Me.TextBox2.BackColor = System.Drawing.SystemColors.MenuText
+        Me.TextBox2.Font = New System.Drawing.Font("Calculator", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.ForeColor = System.Drawing.Color.LawnGreen
+        Me.TextBox2.Location = New System.Drawing.Point(500, 82)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(246, 116)
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(246, 118)
         Me.TextBox2.TabIndex = 5
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox1
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(48, 110)
+        Me.TextBox1.BackColor = System.Drawing.SystemColors.MenuText
+        Me.TextBox1.Font = New System.Drawing.Font("Calculator", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.LawnGreen
+        Me.TextBox1.Location = New System.Drawing.Point(82, 82)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(246, 116)
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(246, 118)
         Me.TextBox1.TabIndex = 4
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Panel4
         '
+        Me.Panel4.Controls.Add(Me.Label5)
+        Me.Panel4.Controls.Add(Me.Label4)
         Me.Panel4.Controls.Add(Me.Label1)
         Me.Panel4.Controls.Add(Me.TextBox3)
         Me.Panel4.Controls.Add(Me.TextBox1)
@@ -143,19 +174,154 @@ Partial Class lecturas
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Controls.Add(Me.TextBox2)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(59, 37)
+        Me.Panel4.Location = New System.Drawing.Point(0, 37)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1830, 240)
+        Me.Panel4.Size = New System.Drawing.Size(1325, 240)
         Me.Panel4.TabIndex = 169
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(334, 127)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(104, 73)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "°C"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(752, 127)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(157, 73)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "ppm"
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 2
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Chart3, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Chart1, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Chart2, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel3, 1, 1)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 277)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1325, 760)
+        Me.TableLayoutPanel1.TabIndex = 170
+        '
+        'Chart1
+        '
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
+        Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
+        Me.Chart1.Location = New System.Drawing.Point(3, 3)
+        Me.Chart1.Name = "Chart1"
+        Series2.ChartArea = "ChartArea1"
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.Chart1.Series.Add(Series2)
+        Me.Chart1.Size = New System.Drawing.Size(656, 374)
+        Me.Chart1.TabIndex = 0
+        Me.Chart1.Text = "Chart1"
+        '
+        'Chart2
+        '
+        ChartArea3.Name = "ChartArea1"
+        Me.Chart2.ChartAreas.Add(ChartArea3)
+        Me.Chart2.Dock = System.Windows.Forms.DockStyle.Fill
+        Legend3.Name = "Legend1"
+        Me.Chart2.Legends.Add(Legend3)
+        Me.Chart2.Location = New System.Drawing.Point(665, 3)
+        Me.Chart2.Name = "Chart2"
+        Series3.ChartArea = "ChartArea1"
+        Series3.Legend = "Legend1"
+        Series3.Name = "Series1"
+        Me.Chart2.Series.Add(Series3)
+        Me.Chart2.Size = New System.Drawing.Size(657, 374)
+        Me.Chart2.TabIndex = 1
+        Me.Chart2.Text = "Chart2"
+        '
+        'Chart3
+        '
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart3.ChartAreas.Add(ChartArea1)
+        Me.Chart3.Dock = System.Windows.Forms.DockStyle.Fill
+        Legend1.Name = "Legend1"
+        Me.Chart3.Legends.Add(Legend1)
+        Me.Chart3.Location = New System.Drawing.Point(3, 383)
+        Me.Chart3.Name = "Chart3"
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart3.Series.Add(Series1)
+        Me.Chart3.Size = New System.Drawing.Size(656, 374)
+        Me.Chart3.TabIndex = 2
+        Me.Chart3.Text = "Chart3"
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
+        'Button1
+        '
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button1.Location = New System.Drawing.Point(253, 28)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(63, 58)
+        Me.Button1.TabIndex = 10
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button2.Location = New System.Drawing.Point(391, 28)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(63, 58)
+        Me.Button2.TabIndex = 11
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button3.Location = New System.Drawing.Point(322, 28)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(63, 58)
+        Me.Button3.TabIndex = 12
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Button2)
+        Me.Panel3.Controls.Add(Me.Button3)
+        Me.Panel3.Controls.Add(Me.Button1)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(665, 383)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(657, 374)
+        Me.Panel3.TabIndex = 3
         '
         'lecturas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1889, 1074)
+        Me.ClientSize = New System.Drawing.Size(1325, 1074)
         Me.ControlBox = False
+        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Panel4)
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -166,13 +332,17 @@ Partial Class lecturas
         Me.Panel2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Chart3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button5 As Button
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel3 As Panel
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
@@ -180,4 +350,15 @@ Partial Class lecturas
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents Chart3 As DataVisualization.Charting.Chart
+    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
+    Friend WithEvents Chart2 As DataVisualization.Charting.Chart
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button1 As Button
 End Class
