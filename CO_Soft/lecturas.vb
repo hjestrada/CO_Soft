@@ -1,6 +1,8 @@
 ﻿Imports System.Runtime.InteropServices
 
 Public Class lecturas
+    Dim pH
+
 
     'Necesarios para redondear formulario
     Public SD As Integer
@@ -34,7 +36,7 @@ Public Class lecturas
         Me.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width - 2, Height - 2, 20, 20))
         TextBox1.Text = "35"
         TextBox2.Text = "100"
-        TextBox3.Text = "7"
+        TextBox3.Text = "10"
         Label6.Text = Now
         iconoDesconectado()
 
@@ -51,6 +53,8 @@ Public Class lecturas
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Label6.Text = Now
+        ValidarpH()
+
         If Principal.SerialPort1.IsOpen Then
             iconoConectado()
 
@@ -61,6 +65,25 @@ Public Class lecturas
         End If
     End Sub
 
+    Sub ValidarpH()
+        pH = Val(TextBox3.Text)
+
+
+        If pH <= 6.99 Then
+            Label12.Text = "Ácido"
+
+        Else
+            If pH = 7 Then
+                Label12.Text = "Neutro"
+
+            Else
+                Label12.Text = "Alcalino"
+            End If
+
+        End If
+
+
+    End Sub
 
     Sub iconoConectado()
         PBConectado.Visible = True
