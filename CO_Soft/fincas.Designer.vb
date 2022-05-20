@@ -298,9 +298,9 @@ Partial Class fincas
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(29, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(181, 58)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(62, 31)
+        Me.Label6.Size = New System.Drawing.Size(44, 31)
         Me.Label6.TabIndex = 134
-        Me.Label6.Text = "001"
+        Me.Label6.Text = "---"
         '
         'fincas
         '

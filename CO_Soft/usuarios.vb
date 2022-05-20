@@ -1,5 +1,7 @@
 ﻿
-
+Option Strict Off
+Option Explicit On
+Imports System.Text.RegularExpressions
 
 Imports System.Runtime.InteropServices
 Imports System.Data.SQLite
@@ -7,12 +9,6 @@ Imports System.IO
 
 
 Public Class usuarios
-
-
-    Dim DB_Path As String = "Data Source=" & Application.StartupPath & "\fermentador_memo.s3db;"
-    Dim SQLiteCon As New SqliteConnection(DB_Path)
-    Dim SQLliteCMD As New SqliteCommand
-    Dim SQLiteDA As New SQLiteDataAdapter
 
 
 
@@ -55,50 +51,52 @@ Public Class usuarios
     Private Sub usuarios_Load(sender As Object, e As EventArgs) Handles Me.Load
         'Necesario para redondear formulario
         Me.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width - 2, Height - 2, 20, 20))
+        Button2.Enabled = False
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         '
-        If Trim(TextBox1.Text) = "" Or Trim(TextBox2.Text) = "" Or Trim(TextBox3.Text) = "" Or Trim(MaskedTextBox1.Text) = "" Then
+        If Trim(TextBox1.Text) = "" Or Trim(TextBox3.Text) = "" Or Trim(MaskedTextBox1.Text) = "" Then
             MsgBox("¡Error! no se permiten campos vacios")
 
         Else
-            SQLiteCon.Close()
-            Try
-
-
-                SQLiteCon.Open()
-                SQLliteCMD = New SQLiteCommand
-
-                With SQLliteCMD
-                    .CommandText = " INSERT INTO USUARIO (`id_usuario`, `nombre_usu`,`apellido_usu`,`direccion`,`email`,`telefono`)
-                                                           VALUES (@id_usuario, @nombre_usu,@apellido_usu,@direccion,@email,@telefono)"
-                    .Connection = SQLiteCon
-                    .Parameters.AddWithValue("@id_usuario", Me.TextBox5.Text)
-                    .Parameters.AddWithValue("@nombre_usu", Me.TextBox1.Text)
-                    .Parameters.AddWithValue("@apellido_usu", Me.TextBox2.Text)
-                    .Parameters.AddWithValue("@direccion", Me.TextBox3.Text)
-                    .Parameters.AddWithValue("@email", Me.TextBox4.Text)
-                    .Parameters.AddWithValue("@telefono", Me.MaskedTextBox1.Text)
-
-                    .ExecuteNonQuery()
-                End With
+            Dim sMail As String
+            sMail = TextBox4.Text
+            If Regex.IsMatch(sMail, "^[-a-zA-Z0-9][-.a-zA-Z0-9]*@[-.a-zA-Z0-9]+(\.[-.a-zA-Z0-9]+)*\.(com|edu|info|gov|int|mil|net|org|biz|name|museum|coop|aero|pro|tv|[a-zA-Z]{2})$") = False Then
+                MsgBox("Error! Direccion de correo electronico invalido")
+                TextBox4.Clear()
+            Else
 
                 SQLiteCon.Close()
-                MsgBox("Datos Registrados Exitosamente")
-                limpiarcamposusuarios()
+                Try
+                    SQLiteCon.Open()
+                    SQLliteCMD = New SQLiteCommand
 
-            Catch ex As Exception
+                    With SQLliteCMD
+                        .CommandText = " INSERT INTO USUARIO (`id_usuario`, `nombre_usu`,`direccion`,`email`,`telefono`)
+                                                           VALUES (@id_usuario, @nombre_usu,@direccion,@email,@telefono)"
+                        .Connection = SQLiteCon
+                        .Parameters.AddWithValue("@id_usuario", Me.TextBox5.Text)
+                        .Parameters.AddWithValue("@nombre_usu", Me.TextBox1.Text)
+                        .Parameters.AddWithValue("@direccion", Me.TextBox3.Text)
+                        .Parameters.AddWithValue("@email", Me.TextBox4.Text)
+                        .Parameters.AddWithValue("@telefono", Me.MaskedTextBox1.Text)
+                        .ExecuteNonQuery()
+                    End With
+
+                    SQLiteCon.Close()
+                    MsgBox("Datos Registrados Exitosamente")
+                    limpiarcamposusuarios()
+
+                Catch ex As Exception
+                    SQLiteCon.Close()
+                    MsgBox("Descripcion del error:" & ex.Message)
+                    Return
+                End Try
                 SQLiteCon.Close()
-            MsgBox("Descripcion del error:" & ex.Message)
-
-            Return
-            End Try
-            SQLiteCon.Close()
-
-
+            End If
         End If
-
 
 
 
@@ -107,7 +105,7 @@ Public Class usuarios
     Sub limpiarcamposusuarios()
         TextBox5.Clear()
         TextBox1.Clear()
-        TextBox2.Clear()
+
         TextBox3.Clear()
         TextBox4.Clear()
         MaskedTextBox1.Clear()
@@ -115,6 +113,93 @@ Public Class usuarios
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Try
+            SQLiteCon.Open()
 
+            Button2.Enabled = False
+
+            '------------------Bloque de actualizacion-------------------
+
+            With SQLliteCMD
+                .CommandText = "UPDATE `usuario`  SET  id_usuario=@id_usuario,nombre_usu=@nombre_usu,direccion=@direccion,email=@email,telefono=@telefono WHERE id_usuario=@id_usuario"
+                .Connection = SQLiteCon
+                .Parameters.AddWithValue("@id_usuario", Me.TextBox5.Text)
+                .Parameters.AddWithValue("@nombre_usu", Me.TextBox1.Text)
+                .Parameters.AddWithValue("@direccion", Me.TextBox3.Text)
+                .Parameters.AddWithValue("@email", Me.TextBox4.Text)
+                .Parameters.AddWithValue("@telefono", Me.MaskedTextBox1.Text)
+                .ExecuteNonQuery()
+
+            End With
+            MsgBox("Datos Actualizados Exitosamente", MsgBoxStyle.Information, "Information")
+            SQLiteCon.Close()
+            limpiarcamposusuarios()
+            '---------------------------
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message)
+            SQLiteCon.Close()
+        End Try
+
+
+
+    End Sub
+
+    Private Sub TextBox5_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox5.KeyPress
+        If Not IsNumeric(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Try
+            '------bloque de busquedad------------------------------------------
+
+            Dim Numero As String
+            Numero = InputBox("Por favor digite la cédula del Usuario a Actualizar")
+            consulta = "SELECT * FROM `USUARIO` WHERE `id_usuario`=" & Numero & ""
+            SQLiteDA = New SQLiteDataAdapter(consulta, SQLiteCon)
+            dataSet = New DataSet
+            SQLiteDA.Fill(dataSet, "usuario")
+            lista = dataSet.Tables("usuario").Rows.Count
+
+            If lista = 0 Then
+                MsgBox("Registro no encontrado")
+            End If
+            TextBox5.Text = dataSet.Tables("usuario").Rows(0).Item("id_usuario")
+            TextBox1.Text = dataSet.Tables("usuario").Rows(0).Item("nombre_usu")
+            TextBox3.Text = dataSet.Tables("usuario").Rows(0).Item("direccion")
+            TextBox4.Text = dataSet.Tables("usuario").Rows(0).Item("email")
+            MaskedTextBox1.Text = dataSet.Tables("usuario").Rows(0).Item("telefono")
+
+            Button2.Enabled = True
+            SQLiteCon.Close()
+
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+
+        Try
+
+
+            Button2.Enabled = False
+            SQLiteCon.Open()
+            Dim Numero As String
+
+            Numero = InputBox("Por favor digite el numero de Cedula del Usuario a eliminar")
+
+            If MessageBox.Show("¿Seguro que desea eliminar este registro?, este proceso es irreversible y puede ocasionar perdidas de datos posteriores ", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = vbYes Then
+                SQLliteCMD = New SQLite.SQLiteCommand("delete from usuario where id_usuario='" & Numero & "'", SQLiteCon)
+                SQLliteCMD.ExecuteNonQuery()
+                MsgBox("Registro Eliminado")
+                SQLiteCon.Close()
+                limpiarcamposusuarios()
+
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
