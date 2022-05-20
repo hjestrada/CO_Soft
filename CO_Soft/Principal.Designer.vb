@@ -31,6 +31,8 @@ Partial Class Principal
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -49,11 +51,10 @@ Partial Class Principal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button9 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        Me.TableLayoutPanel4.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -62,7 +63,6 @@ Partial Class Principal
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Timer1
@@ -132,6 +132,34 @@ Partial Class Principal
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Salidas"
         '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.ColumnCount = 1
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TableLayoutPanel4.Controls.Add(Me.Button9, 0, 0)
+        Me.TableLayoutPanel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(6, 90)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 1
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(217, 45)
+        Me.TableLayoutPanel4.TabIndex = 114
+        '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.Button9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime
+        Me.Button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button9.Location = New System.Drawing.Point(3, 3)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(211, 39)
+        Me.Button9.TabIndex = 11
+        Me.Button9.Text = "Consultas"
+        Me.Button9.UseVisualStyleBackColor = False
+        '
         'TableLayoutPanel3
         '
         Me.TableLayoutPanel3.ColumnCount = 1
@@ -142,7 +170,7 @@ Partial Class Principal
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(217, 45)
         Me.TableLayoutPanel3.TabIndex = 113
         '
@@ -366,34 +394,6 @@ Partial Class Principal
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
-        'TableLayoutPanel4
-        '
-        Me.TableLayoutPanel4.ColumnCount = 1
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel4.Controls.Add(Me.Button9, 0, 0)
-        Me.TableLayoutPanel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(6, 90)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(217, 45)
-        Me.TableLayoutPanel4.TabIndex = 114
-        '
-        'Button9
-        '
-        Me.Button9.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(3, Byte), Integer))
-        Me.Button9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime
-        Me.Button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(29, Byte), Integer))
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button9.Location = New System.Drawing.Point(3, 3)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(211, 39)
-        Me.Button9.TabIndex = 11
-        Me.Button9.Text = "Consultas"
-        Me.Button9.UseVisualStyleBackColor = False
-        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -413,6 +413,7 @@ Partial Class Principal
         Me.Panel2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
+        Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
@@ -422,7 +423,6 @@ Partial Class Principal
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TableLayoutPanel4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

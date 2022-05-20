@@ -134,6 +134,7 @@ Public Class usuarios
             MsgBox("Datos Actualizados Exitosamente", MsgBoxStyle.Information, "Information")
             SQLiteCon.Close()
             limpiarcamposusuarios()
+            Button1.Enabled = True
             '---------------------------
         Catch ex As Exception
             MsgBox("Error: " & ex.Message)
@@ -155,24 +156,31 @@ Public Class usuarios
             '------bloque de busquedad------------------------------------------
 
             Dim Numero As String
-            Numero = InputBox("Por favor digite la cédula del Usuario a Actualizar")
+            Numero = InputBox("Por favor digite la cédula del Usuario a Buscar", "Buscar")
+
+            If String.IsNullOrEmpty(Numero) Then
+                MessageBox.Show("Busqueda Cancelada")
+                Return
+            End If
+
             consulta = "SELECT * FROM `USUARIO` WHERE `id_usuario`=" & Numero & ""
             SQLiteDA = New SQLiteDataAdapter(consulta, SQLiteCon)
-            dataSet = New DataSet
-            SQLiteDA.Fill(dataSet, "usuario")
-            lista = dataSet.Tables("usuario").Rows.Count
+                dataSet = New DataSet
+                SQLiteDA.Fill(dataSet, "usuario")
+                lista = dataSet.Tables("usuario").Rows.Count
 
-            If lista = 0 Then
-                MsgBox("Registro no encontrado")
-            End If
-            TextBox5.Text = dataSet.Tables("usuario").Rows(0).Item("id_usuario")
-            TextBox1.Text = dataSet.Tables("usuario").Rows(0).Item("nombre_usu")
-            TextBox3.Text = dataSet.Tables("usuario").Rows(0).Item("direccion")
-            TextBox4.Text = dataSet.Tables("usuario").Rows(0).Item("email")
-            MaskedTextBox1.Text = dataSet.Tables("usuario").Rows(0).Item("telefono")
+                If lista = 0 Then
+                    MsgBox("Registro no encontrado")
+                End If
+                TextBox5.Text = dataSet.Tables("usuario").Rows(0).Item("id_usuario")
+                TextBox1.Text = dataSet.Tables("usuario").Rows(0).Item("nombre_usu")
+                TextBox3.Text = dataSet.Tables("usuario").Rows(0).Item("direccion")
+                TextBox4.Text = dataSet.Tables("usuario").Rows(0).Item("email")
+                MaskedTextBox1.Text = dataSet.Tables("usuario").Rows(0).Item("telefono")
+                Button2.Enabled = True
+                SQLiteCon.Close()
+            Button1.Enabled = False
 
-            Button2.Enabled = True
-            SQLiteCon.Close()
 
         Catch ex As Exception
             MsgBox("Error: " & ex.Message)
@@ -182,23 +190,35 @@ Public Class usuarios
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
         Try
-
+            Button1.Enabled = True
 
             Button2.Enabled = False
-            SQLiteCon.Open()
             Dim Numero As String
-
             Numero = InputBox("Por favor digite el numero de Cedula del Usuario a eliminar")
 
-            If MessageBox.Show("¿Seguro que desea eliminar este registro?, este proceso es irreversible y puede ocasionar perdidas de datos posteriores ", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = vbYes Then
+            If String.IsNullOrEmpty(Numero) Then
+                MessageBox.Show("Eliminación Cancelada")
+                Return
+            End If
+
+            Dim result As DialogResult = MessageBox.Show("¿Seguro que desea eliminar este registro?, este proceso es irreversible y puede ocasionar perdidas de datos posteriores ", "Atención", MessageBoxButtons.YesNo)
+
+            If (result = DialogResult.Yes) Then
+                SQLiteCon.Open()
                 SQLliteCMD = New SQLite.SQLiteCommand("delete from usuario where id_usuario='" & Numero & "'", SQLiteCon)
                 SQLliteCMD.ExecuteNonQuery()
                 MsgBox("Registro Eliminado")
                 SQLiteCon.Close()
                 limpiarcamposusuarios()
+                Button1.Enabled = True
+            Else
+                MessageBox.Show("Eliminación Cancelada")
 
             End If
+
+
         Catch ex As Exception
+            MsgBox("Error: " & ex.Message)
 
         End Try
     End Sub

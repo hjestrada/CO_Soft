@@ -43,7 +43,12 @@ Public Class lecturas
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Me.Close()
+
+        Dim ask As MsgBoxResult = MsgBox("¿Esta seguro que desea cerrar esta ventana?, se perderá el proceso de fermentación que esta realizando, ¿Desea Continuar?", MsgBoxStyle.YesNo)
+        If ask = MsgBoxResult.Yes Then
+
+            Me.Close()
+        End If
 
     End Sub
 
@@ -97,8 +102,6 @@ Public Class lecturas
         Label11.Text = "Desconectado"
         Label11.ForeColor = Color.Red
     End Sub
-
-
 
 
 End Class

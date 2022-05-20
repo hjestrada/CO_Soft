@@ -89,7 +89,7 @@
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
 
-        Dim ask As MsgBoxResult = MsgBox("¿Desea cerrar la conexión con el Dispositivo  " & SerialPort1.PortName & " y salir?", MsgBoxStyle.YesNo)
+        Dim ask As MsgBoxResult = MsgBox("¿Esta seguro que desea cerrar la aplicacion?", MsgBoxStyle.YesNo)
         If ask = MsgBoxResult.Yes Then
             SerialPort1.Close()
             Me.Close()
@@ -154,6 +154,13 @@
     End Sub
 
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub PictureBox3_Click_1(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Acercade.MdiParent = Me
+
+        Acercade.Show()
 
     End Sub
 End Class
