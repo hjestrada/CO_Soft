@@ -77,7 +77,7 @@ Partial Class Principal
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1480, 37)
+        Me.Panel2.Size = New System.Drawing.Size(1746, 37)
         Me.Panel2.TabIndex = 116
         '
         'Button6
@@ -89,7 +89,7 @@ Partial Class Principal
         Me.Button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
-        Me.Button6.Location = New System.Drawing.Point(1447, 3)
+        Me.Button6.Location = New System.Drawing.Point(1713, 3)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(30, 30)
         Me.Button6.TabIndex = 3
@@ -101,7 +101,7 @@ Partial Class Principal
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel3.Location = New System.Drawing.Point(0, 1137)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1480, 37)
+        Me.Panel3.Size = New System.Drawing.Size(1746, 37)
         Me.Panel3.TabIndex = 117
         '
         'Panel1
@@ -398,8 +398,9 @@ Partial Class Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1480, 1174)
+        Me.ClientSize = New System.Drawing.Size(1746, 1174)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)

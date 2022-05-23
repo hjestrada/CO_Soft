@@ -6,7 +6,7 @@ Imports System.Text.RegularExpressions
 Imports System.Runtime.InteropServices
 Imports System.Data.SQLite
 Imports System.IO
-
+Imports System.Threading
 
 Public Class usuarios
 
@@ -41,6 +41,7 @@ Public Class usuarios
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Me.Close()
+
 
     End Sub
 
@@ -167,20 +168,20 @@ Public Class usuarios
 
             consulta = "SELECT * FROM `USUARIO` WHERE `id_usuario`=" & Numero & ""
             SQLiteDA = New SQLiteDataAdapter(consulta, SQLiteCon)
-                dataSet = New DataSet
-                SQLiteDA.Fill(dataSet, "usuario")
-                lista = dataSet.Tables("usuario").Rows.Count
+            dataSet = New DataSet
+            SQLiteDA.Fill(dataSet, "usuario")
+            lista = dataSet.Tables("usuario").Rows.Count
 
-                If lista = 0 Then
-                    MsgBox("Registro no encontrado")
-                End If
-                TextBox5.Text = dataSet.Tables("usuario").Rows(0).Item("id_usuario")
-                TextBox1.Text = dataSet.Tables("usuario").Rows(0).Item("nombre_usu")
-                TextBox3.Text = dataSet.Tables("usuario").Rows(0).Item("direccion")
-                TextBox4.Text = dataSet.Tables("usuario").Rows(0).Item("email")
-                MaskedTextBox1.Text = dataSet.Tables("usuario").Rows(0).Item("telefono")
-                Button2.Enabled = True
-                SQLiteCon.Close()
+            If lista = 0 Then
+                MsgBox("Registro no encontrado")
+            End If
+            TextBox5.Text = dataSet.Tables("usuario").Rows(0).Item("id_usuario")
+            TextBox1.Text = dataSet.Tables("usuario").Rows(0).Item("nombre_usu")
+            TextBox3.Text = dataSet.Tables("usuario").Rows(0).Item("direccion")
+            TextBox4.Text = dataSet.Tables("usuario").Rows(0).Item("email")
+            MaskedTextBox1.Text = dataSet.Tables("usuario").Rows(0).Item("telefono")
+            Button2.Enabled = True
+            SQLiteCon.Close()
             Button1.Enabled = False
 
 

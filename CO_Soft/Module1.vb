@@ -20,4 +20,8 @@ Module Module1
     Public consulta As String
     Public dataSet As DataSet
     Public lista As Byte
+
+
+
+
 End Module

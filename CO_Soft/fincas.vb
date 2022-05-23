@@ -2,14 +2,8 @@
 Option Strict Off
 Option Explicit On
 
-Imports System.Runtime.InteropServices
 Imports System.Data.SQLite
-Imports System.Data.SqlClient
-Imports System.IO
-
-Imports System.Text.RegularExpressions
-
-
+Imports System.Runtime.InteropServices
 
 
 
@@ -76,7 +70,7 @@ Public Class fincas
         CargarcomboUsuario()
 
         ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
-
+        Button2.Enabled = False
     End Sub
 
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs)
@@ -111,6 +105,142 @@ Public Class fincas
         Finally
             SQLiteCon.Close()
             SQLliteCMD = Nothing
+        End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        If Trim(TextBox1.Text) = "" Or Trim(TextBox2.Text) = "" Then
+            MsgBox("¡Error! no se permiten campos vacios")
+
+        Else
+
+            SQLiteCon.Close()
+            Try
+                SQLiteCon.Open()
+                SQLliteCMD = New SQLiteCommand
+
+                With SQLliteCMD
+                    .CommandText = " INSERT INTO finca (`id_finca`, `nombre_fin`,`ubicacion_fin`,`id_usuario`)
+                                                           VALUES (NULL,@nombre_fin,@ubicacion_fin,@id_usuario)"
+                    .Connection = SQLiteCon
+                    .Parameters.AddWithValue("@nombre_fin", Me.TextBox1.Text)
+                    .Parameters.AddWithValue("@ubicacion_fin", Me.TextBox2.Text)
+                    .Parameters.AddWithValue("@id_usuario", ComboBox1.SelectedValue.ToString)
+
+                    .ExecuteNonQuery()
+                End With
+
+                SQLiteCon.Close()
+                MsgBox("Datos Registrados Exitosamente")
+                limpiarcamposfincas()
+
+            Catch ex As Exception
+                SQLiteCon.Close()
+                MsgBox("Descripcion del error:" & ex.Message)
+                Return
+            End Try
+            SQLiteCon.Close()
+        End If
+
+    End Sub
+
+
+    Sub limpiarcamposfincas()
+
+        TextBox1.Clear()
+        TextBox2.Clear()
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+
+        Try
+
+
+            SQLiteCon.Open()
+            Button2.Enabled = False
+
+
+            MsgBox(Me.Label6.Text)
+            MsgBox(Me.TextBox1.Text)
+            MsgBox(Me.TextBox2.Text)
+            MsgBox(ComboBox1.SelectedValue.ToString)
+
+
+
+
+            '------------------Bloque de actualizacion-------------------
+            With SQLliteCMD
+
+                .CommandText = "UPDATE `finca` SET id_finca=@id_finca, nombre_fin=@nombre_fin,ubicacion_fin=@ubicacion_fin,id_usuario=@id_usuario WHERE id_finca=@id_finca"
+                .Connection = SQLiteCon
+                .Parameters.AddWithValue("@id_finca", Me.Label6.Text)
+                .Parameters.AddWithValue("@nombre_fin", Me.TextBox1.Text)
+                .Parameters.AddWithValue("@ubicacion_fin", Me.TextBox2.Text)
+                .Parameters.AddWithValue("@id_usuario", ComboBox1.SelectedValue.ToString)
+
+                .ExecuteNonQuery()
+
+            End With
+            MsgBox("Datos Actualizados Exitosamente", MsgBoxStyle.Information, "Information")
+            SQLiteCon.Close()
+            limpiarcamposfincas()
+            Button1.Enabled = True
+            Me.Close()
+
+            '---------------------------
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message)
+        SQLiteCon.Close()
+        End Try
+
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Try
+            '------bloque de busquedad------------------------------------------
+
+            Dim Numero, auxconsulta As String
+            Numero = InputBox("Por favor digite el código de la finca a Buscar", "Buscar")
+
+            If String.IsNullOrEmpty(Numero) Then
+                MessageBox.Show("Busqueda Cancelada")
+                Return
+            End If
+
+            consulta = "SELECT * FROM `finca` WHERE `id_finca`=" & Numero & ""
+            SQLiteDA = New SQLiteDataAdapter(consulta, SQLiteCon)
+            dataSet = New DataSet
+            SQLiteDA.Fill(dataSet, "finca")
+            lista = dataSet.Tables("finca").Rows.Count
+
+            If lista = 0 Then
+                MsgBox("Registro no encontrado")
+            End If
+            Label6.Text = dataSet.Tables("finca").Rows(0).Item("id_finca")
+            TextBox1.Text = dataSet.Tables("finca").Rows(0).Item("nombre_fin")
+            TextBox2.Text = dataSet.Tables("finca").Rows(0).Item("ubicacion_fin")
+            auxconsulta = dataSet.Tables("finca").Rows(0).Item("id_usuario")
+
+            Dim MySQLDA As New SQLiteDataAdapter("SELECT `nombre_usu` FROM usuario WHERE id_usuario=" & auxconsulta & "", SQLiteCon)
+
+            Dim table As New DataTable
+            MySQLDA.Fill(table)
+            ComboBox1.DataSource = table
+            ComboBox1.ValueMember = "id_usuario"
+            ComboBox1.DisplayMember = "nombre_usu"
+
+
+            Button2.Enabled = True
+            SQLiteCon.Close()
+            Button1.Enabled = False
+
+
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message)
         End Try
     End Sub
 End Class
