@@ -74,6 +74,9 @@ Public Class fincas
         Me.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width - 2, Height - 2, 20, 20))
         MAXID()
         CargarcomboUsuario()
+
+        ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
+
     End Sub
 
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs)
