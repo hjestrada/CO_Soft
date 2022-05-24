@@ -58,7 +58,7 @@ Public Class fincas
     End Sub
 
     Sub CONSULTAFRECUENTE()
-        Dim Sql As String = "Select * FROM finca where id_usuario=" & ComboBox1.SelectedValue.ToString & ""
+        Dim Sql As String = "Select * FROM finca order by id_usuario"
         Obj.consultaDGW(DataGridView1, Sql)
     End Sub
 
@@ -297,7 +297,7 @@ Public Class fincas
 
             If (result = DialogResult.Yes) Then
                 SQLiteCon.Open()
-                SQLliteCMD = New SQLite.SQLiteCommand("PRAGMA foreign_keys = ON; delete from finca  where id_finca='" & Numero & "'", SQLiteCon)
+                SQLliteCMD = New SQLite.SQLiteCommand(" PRAGMA foreign_keys = ON;delete from finca  where id_finca='" & Numero & "'", SQLiteCon)
 
 
                 SQLliteCMD.ExecuteNonQuery()

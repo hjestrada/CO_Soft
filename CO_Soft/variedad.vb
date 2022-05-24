@@ -16,7 +16,7 @@ Public Class variedad
     Dim obj2 As New Clase1
 
 
-
+    Public auxconsulta, auxconsulta2
 
 
     'Necesarios para redondear formulario
@@ -61,7 +61,7 @@ Public Class variedad
         ComboBox2.DropDownStyle = ComboBoxStyle.DropDownList
         MAXID()
         consultaDGW()
-
+        Button2.Enabled = False
 
 
     End Sub
@@ -178,7 +178,6 @@ Public Class variedad
                     .Parameters.AddWithValue("@id_finca", ComboBox2.SelectedValue.ToString)
                     .Parameters.AddWithValue("@id_usuario", ComboBox1.SelectedValue.ToString)
                     .ExecuteNonQuery()
-
                     consultaDGW()
 
                 End With
@@ -199,5 +198,71 @@ Public Class variedad
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
         consultaDGW()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        'Try
+        '------bloque de busqueda------------------------------------------
+
+        Dim Numero As String
+            Numero = InputBox("Por favor digite el código de la variedad a  Buscar", "Buscar")
+
+            If String.IsNullOrEmpty(Numero) Then
+                MessageBox.Show("Busqueda Cancelada")
+                Return
+            End If
+
+            consulta = "SELECT * FROM `variedad` WHERE `id_variedad`=" & Numero & ""
+            SQLiteDA = New SQLiteDataAdapter(consulta, SQLiteCon)
+            dataSet = New DataSet
+            SQLiteDA.Fill(dataSet, "variedad")
+            lista = dataSet.Tables("variedad").Rows.Count
+
+            If lista = 0 Then
+                MsgBox("Registro no encontrado")
+            End If
+
+
+            Label6.Text = dataSet.Tables("variedad").Rows(0).Item("id_variedad")
+            TextBox2.Text = dataSet.Tables("variedad").Rows(0).Item("nombre_var")
+            auxconsulta = dataSet.Tables("variedad").Rows(0).Item("id_finca")
+            MsgBox("id finca=" & auxconsulta)
+
+        '--------------------
+
+        Dim MySQLDA As New SQLiteDataAdapter("SELECT * FROM finca WHERE id_finca=" & auxconsulta & "", SQLiteCon)
+
+        Dim table As New DataTable
+        MySQLDA.Fill(table)
+        ComboBox2.DataSource = table
+        ComboBox2.ValueMember = "id_finca"
+        ComboBox2.DisplayMember = "nombre_fin"
+        auxconsulta2 = dataSet.Tables("finca").Rows(0).Item("id_usuario")
+
+        'MsgBox("id usuario=" & auxconsulta2)
+
+
+
+        Dim MySQLDA2 As New SQLiteDataAdapter("SELECT * FROM usuario WHERE id_usuario=" & auxconsulta2 & "", SQLiteCon)
+
+        Dim table2 As New DataTable
+
+        MySQLDA2.Fill(table)
+        ComboBox1.DataSource = table
+        ComboBox1.ValueMember = "id_usuario"
+        ComboBox1.DisplayMember = "nombre_usu"
+
+
+
+
+        Button2.Enabled = True
+            SQLiteCon.Close()
+            Button1.Enabled = False
+
+
+
+       ' Catch ex As Exception
+        ' MsgBox("Error: " & ex.Message)
+        '  End Try
     End Sub
 End Class

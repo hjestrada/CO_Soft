@@ -6,10 +6,13 @@ Public Class Clase1
     Public SQLiteDA As New SQLiteDataAdapter
 
     Sub consultaDGW(ByVal Tabla As DataGridView, ByVal Sql As String)
-        ':::Instruccion Try para capturar errores
+        Try
 
-        ':::Creamos el objeto DataAdapter y le pasamos los dos parametros (Instruccion, conexión)
-        SQLiteDA = New SQLiteDataAdapter(Sql, DB_Path)
+
+            ':::Instruccion Try para capturar errores
+
+            ':::Creamos el objeto DataAdapter y le pasamos los dos parametros (Instruccion, conexión)
+            SQLiteDA = New SQLiteDataAdapter(Sql, DB_Path)
 
             ':::Creamos el objeto DataTable que recibe la informacion del DataAdapter
             Dim DT As New DataTable
@@ -17,9 +20,10 @@ Public Class Clase1
             SQLiteDA.Fill(DT)
             ':::Ahora mostramos los datos en el DataGridView
             Tabla.DataSource = DT
-        'Catch ex As Exception
 
-        'End Try
+        Catch ex As Exception
+
+        End Try
     End Sub
 
 End Class
