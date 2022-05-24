@@ -10,6 +10,7 @@ Imports System.Threading
 
 Public Class usuarios
 
+    Dim obj As New Clase1
 
 
     'Necesarios para redondear formulario
@@ -54,8 +55,13 @@ Public Class usuarios
         Me.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width - 2, Height - 2, 20, 20))
         Button2.Enabled = False
 
+        CONSULTAFRECUENTE()
 
 
+    End Sub
+    Sub CONSULTAFRECUENTE()
+        Dim Sql As String = "Select * FROM USUARIO"
+        obj.consultaDGW(DataGridView1, Sql)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -86,6 +92,7 @@ Public Class usuarios
                         .Parameters.AddWithValue("@email", Me.TextBox4.Text)
                         .Parameters.AddWithValue("@telefono", Me.MaskedTextBox1.Text)
                         .ExecuteNonQuery()
+                        CONSULTAFRECUENTE()
                     End With
 
                     SQLiteCon.Close()
@@ -94,10 +101,11 @@ Public Class usuarios
 
                 Catch ex As Exception
                     SQLiteCon.Close()
-                    MsgBox("Descripcion del error:" & ex.Message)
+                    ' MsgBox("Descripcion del error:" & ex.Message)
                     Return
                 End Try
                 SQLiteCon.Close()
+
             End If
         End If
 
@@ -124,7 +132,7 @@ Public Class usuarios
             '------------------Bloque de actualizacion-------------------
 
             With SQLliteCMD
-                .CommandText = "UPDATE `usuario`  SET  id_usuario=@id_usuario,nombre_usu=@nombre_usu,direccion=@direccion,email=@email,telefono=@telefono WHERE id_usuario=@id_usuario"
+                .CommandText = "PRAGMA foreign_keys = ON; UPDATE `usuario`  SET  id_usuario=@id_usuario,nombre_usu=@nombre_usu,direccion=@direccion,email=@email,telefono=@telefono WHERE id_usuario=@id_usuario"
                 .Connection = SQLiteCon
                 .Parameters.AddWithValue("@id_usuario", Me.TextBox5.Text)
                 .Parameters.AddWithValue("@nombre_usu", Me.TextBox1.Text)
@@ -138,9 +146,10 @@ Public Class usuarios
             SQLiteCon.Close()
             limpiarcamposusuarios()
             Button1.Enabled = True
+            CONSULTAFRECUENTE()
             '---------------------------
         Catch ex As Exception
-            MsgBox("Error: " & ex.Message)
+            ' MsgBox("Error: " & ex.Message)
             SQLiteCon.Close()
         End Try
 
@@ -183,10 +192,10 @@ Public Class usuarios
             Button2.Enabled = True
             SQLiteCon.Close()
             Button1.Enabled = False
-
+            CONSULTAFRECUENTE()
 
         Catch ex As Exception
-            MsgBox("Error: " & ex.Message)
+            ' MsgBox("Error: " & ex.Message)
         End Try
     End Sub
 
@@ -208,12 +217,15 @@ Public Class usuarios
 
             If (result = DialogResult.Yes) Then
                 SQLiteCon.Open()
-                SQLliteCMD = New SQLite.SQLiteCommand("delete from usuario where id_usuario='" & Numero & "'", SQLiteCon)
+                SQLliteCMD = New SQLite.SQLiteCommand("PRAGMA foreign_keys = ON; delete from usuario where id_usuario='" & Numero & "'", SQLiteCon)
+
+
                 SQLliteCMD.ExecuteNonQuery()
                 MsgBox("Registro Eliminado")
                 SQLiteCon.Close()
                 limpiarcamposusuarios()
                 Button1.Enabled = True
+                CONSULTAFRECUENTE()
             Else
                 MessageBox.Show("Eliminación Cancelada")
 
@@ -221,7 +233,7 @@ Public Class usuarios
 
 
         Catch ex As Exception
-            MsgBox("Error: " & ex.Message)
+            ' MsgBox("Error: " & ex.Message)
 
         End Try
     End Sub

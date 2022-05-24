@@ -134,8 +134,8 @@
 
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles Me.Load
         GetSerialPortNames()
-        lecturas.MdiParent = Me
-        lecturas.Show()
+        'lecturas.MdiParent = Me
+        'lecturas.Show()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click

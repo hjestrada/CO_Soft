@@ -156,6 +156,7 @@
     <Compile Include="Acercade.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Clase1.vb" />
     <Compile Include="fincas.Designer.vb">
       <DependentUpon>fincas.vb</DependentUpon>
     </Compile>
