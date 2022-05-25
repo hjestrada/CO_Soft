@@ -61,7 +61,7 @@ Public Class variedad
         ComboBox2.DropDownStyle = ComboBoxStyle.DropDownList
         MAXID()
         consultaDGW()
-        Button2.Enabled = False
+
 
 
     End Sub
@@ -69,7 +69,7 @@ Public Class variedad
 
     Sub consultaDGW()
 
-        Dim Sql As String = "Select * FROM variedad where id_finca=" & ComboBox2.SelectedValue.ToString & ""
+        Dim Sql As String = "Select id_variedad, nombre_var FROM variedad where id_finca=" & ComboBox2.SelectedValue.ToString & ""
         obj2.consultaDGW(DataGridView1, Sql)
 
 
@@ -196,73 +196,46 @@ Public Class variedad
         End If
     End Sub
 
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Try
+
+            Dim Numero As String
+            Numero = InputBox("Por favor digite el consecutivo de la Variedad a eliminar")
+
+            If String.IsNullOrEmpty(Numero) Then
+                MessageBox.Show("Eliminación Cancelada")
+                Return
+            End If
+
+            Dim result As DialogResult = MessageBox.Show("¿Seguro que desea eliminar este registro?, este proceso es irreversible y puede ocasionar perdidas de datos posteriores ", "Atención", MessageBoxButtons.YesNo)
+
+            If (result = DialogResult.Yes) Then
+                SQLiteCon.Open()
+                SQLliteCMD = New SQLite.SQLiteCommand(" PRAGMA foreign_keys = ON;delete from variedad  where id_variedad='" & Numero & "'", SQLiteCon)
+
+
+                SQLliteCMD.ExecuteNonQuery()
+                MsgBox("Registro Eliminado")
+                SQLiteCon.Close()
+
+
+
+                CargarcomboUsuario()
+                MAXID()
+            Else
+                MessageBox.Show("Eliminación Cancelada")
+
+            End If
+
+
+        Catch ex As Exception
+            ' MsgBox("Error: " & ex.Message)
+
+        End Try
+    End Sub
+
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
         consultaDGW()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        'Try
-        '------bloque de busqueda------------------------------------------
-
-        Dim Numero As String
-            Numero = InputBox("Por favor digite el código de la variedad a  Buscar", "Buscar")
-
-            If String.IsNullOrEmpty(Numero) Then
-                MessageBox.Show("Busqueda Cancelada")
-                Return
-            End If
-
-            consulta = "SELECT * FROM `variedad` WHERE `id_variedad`=" & Numero & ""
-            SQLiteDA = New SQLiteDataAdapter(consulta, SQLiteCon)
-            dataSet = New DataSet
-            SQLiteDA.Fill(dataSet, "variedad")
-            lista = dataSet.Tables("variedad").Rows.Count
-
-            If lista = 0 Then
-                MsgBox("Registro no encontrado")
-            End If
-
-
-            Label6.Text = dataSet.Tables("variedad").Rows(0).Item("id_variedad")
-            TextBox2.Text = dataSet.Tables("variedad").Rows(0).Item("nombre_var")
-            auxconsulta = dataSet.Tables("variedad").Rows(0).Item("id_finca")
-            MsgBox("id finca=" & auxconsulta)
-
-        '--------------------
-
-        Dim MySQLDA As New SQLiteDataAdapter("SELECT * FROM finca WHERE id_finca=" & auxconsulta & "", SQLiteCon)
-
-        Dim table As New DataTable
-        MySQLDA.Fill(table)
-        ComboBox2.DataSource = table
-        ComboBox2.ValueMember = "id_finca"
-        ComboBox2.DisplayMember = "nombre_fin"
-        auxconsulta2 = dataSet.Tables("finca").Rows(0).Item("id_usuario")
-
-        'MsgBox("id usuario=" & auxconsulta2)
-
-
-
-        Dim MySQLDA2 As New SQLiteDataAdapter("SELECT * FROM usuario WHERE id_usuario=" & auxconsulta2 & "", SQLiteCon)
-
-        Dim table2 As New DataTable
-
-        MySQLDA2.Fill(table)
-        ComboBox1.DataSource = table
-        ComboBox1.ValueMember = "id_usuario"
-        ComboBox1.DisplayMember = "nombre_usu"
-
-
-
-
-        Button2.Enabled = True
-            SQLiteCon.Close()
-            Button1.Enabled = False
-
-
-
-       ' Catch ex As Exception
-        ' MsgBox("Error: " & ex.Message)
-        '  End Try
-    End Sub
 End Class
