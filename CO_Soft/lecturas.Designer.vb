@@ -71,6 +71,7 @@ Partial Class lecturas
         Me.PBDesconectado = New System.Windows.Forms.PictureBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -200,6 +201,7 @@ Partial Class lecturas
         '
         'Panel4
         '
+        Me.Panel4.Controls.Add(Me.TextBox4)
         Me.Panel4.Controls.Add(Me.Label12)
         Me.Panel4.Controls.Add(Me.Label5)
         Me.Panel4.Controls.Add(Me.Label4)
@@ -556,6 +558,13 @@ Partial Class lecturas
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(744, 15)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(248, 20)
+        Me.TextBox4.TabIndex = 11
+        '
         'lecturas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -630,4 +639,5 @@ Partial Class lecturas
     Friend WithEvents PBConectado As PictureBox
     Friend WithEvents Chart2 As DataVisualization.Charting.Chart
     Friend WithEvents Label12 As Label
+    Friend WithEvents TextBox4 As TextBox
 End Class

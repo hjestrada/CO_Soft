@@ -19,7 +19,14 @@ Module Module1
     Public dataSet As DataSet
     Public lista As Byte
 
+    Public pH As String
+    Public Temp As String
 
+    Public CO2 As String
+
+
+    Public estado As Boolean = False
+    Public comoviene As String
 
 
 

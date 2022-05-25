@@ -3,6 +3,12 @@
     Public EstadoConx As String = "Desconectado"
     Public estado As Boolean = False
 
+
+    Dim az As String     'utilizada para almacenar los datos que se reciben por el puerto
+    Dim sib As Integer    ' sera utilizada como contador
+    Dim msn(100000000) As String    'vector que servira de buffer para los datos que van llegando al puerto
+
+
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -125,6 +131,42 @@
 
         Catch ex As Exception
         End Try
+    End Sub
+
+
+    Private Sub SerialPort1_DataReceived(ByVal sender As Object, ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles SerialPort1.DataReceived
+        Dim auxdatos As String = ""
+
+        Try
+            az = SerialPort1.ReadLine.Trim
+            msn(sib) = az
+            auxdatos += msn(sib) + " "
+            comoviene = auxdatos
+
+            Dim Array_trama() As String = Split(auxdatos, "/")
+            pH = Val(Array_trama(0))
+            Temp = Val(Array_trama(1))
+            CO2 = Val(Array_trama(2))
+            sib += 1
+
+            'comoviene = SerialPort1.ReadLine
+            'Dim Array_trama() As String = Split(comoviene, "/")
+
+            'pH = Val(Array_trama(0))
+            'Temp = Val(Array_trama(1))
+            'CO2 = Val(Array_trama(2))
+
+
+
+
+
+
+
+        Catch ex As Exception
+            CheckForIllegalCrossThreadCalls = False ' DESACTIVA ERROR POR SUBPROCESO
+            ' MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click

@@ -1,7 +1,12 @@
 ﻿Imports System.Runtime.InteropServices
+Imports System.IO.Ports
+
+
+
+
+
 
 Public Class lecturas
-    Dim pH
 
 
     'Necesarios para redondear formulario
@@ -10,6 +15,15 @@ Public Class lecturas
     Public Declare Function GetDesktopWindow Lib "user32" () As Integer
     Public Declare Function SetClassLong Lib "user32" Alias "SetClassLongA" (Dt As IntPtr, IDF As Integer, IGT As Integer) As Integer
     Public Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA" (Wo As IntPtr, Ni As Integer, NK As Integer) As Integer
+
+
+
+
+
+
+
+
+
 
 
     Public Sub New()
@@ -34,9 +48,7 @@ Public Class lecturas
     Private Sub lecturas_Load(sender As Object, e As EventArgs) Handles Me.Load
         'Necesario para redondear formulario
         Me.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width - 2, Height - 2, 20, 20))
-        TextBox1.Text = "35"
-        TextBox2.Text = "100"
-        TextBox3.Text = "10"
+
         Label6.Text = Now
         iconoDesconectado()
 
@@ -62,23 +74,29 @@ Public Class lecturas
 
         If Principal.SerialPort1.IsOpen Then
             iconoConectado()
-
         Else
             iconoDesconectado()
 
-
         End If
+
+        TextBox2.Text = CO2
+        TextBox1.Text = Temp
+        TextBox3.Text = pH
+
+        TextBox4.Text = comoviene
+
     End Sub
 
     Sub ValidarpH()
-        pH = Val(TextBox3.Text)
+
+        Dim pHvalidar = Val(TextBox3.Text)
 
 
-        If pH <= 6.99 Then
+        If pHvalidar <= 6.99 Then
             Label12.Text = "Ácido"
 
         Else
-            If pH = 7 Then
+            If pHvalidar = 7 Then
                 Label12.Text = "Neutro"
 
             Else

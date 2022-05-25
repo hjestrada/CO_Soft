@@ -1,7 +1,9 @@
 
-int ph = 0;
-int temp = 0;
-int Co2 = 0;
+String ph = "";
+String temp = "";
+String Co2 = "";
+String delimitador = "/";
+String enviar = "";
 
 void setup() {
   Serial.begin(9600);
@@ -10,17 +12,12 @@ void setup() {
 
 void loop() {
 
-  ph = random(0, 14);
-  temp = random(0, 100);
-  Co2 = random(0, 1000);
+  ph = random(1, 14);
+  temp = random(1, 100);
+  Co2 = random(10, 1000);
 
+  enviar =    ph + delimitador + temp + delimitador + Co2;
 
-  Serial.print(ph);
-  Serial.print(";");
-  Serial.print(temp);
-  Serial.print(";");
-  Serial.print(Co2);
-  Serial.println();
+  Serial.println(enviar);
   delay(1000);
-
-}
+  }
