@@ -6,7 +6,9 @@ Public Class Clase1
     Public SQLiteDA As New SQLiteDataAdapter
 
     Sub consultaDGW(ByVal Tabla As DataGridView, ByVal Sql As String)
+
         Try
+
 
 
             ':::Instruccion Try para capturar errores
@@ -20,10 +22,10 @@ Public Class Clase1
             SQLiteDA.Fill(DT)
             ':::Ahora mostramos los datos en el DataGridView
             Tabla.DataSource = DT
-
         Catch ex As Exception
 
         End Try
+
     End Sub
 
 End Class
