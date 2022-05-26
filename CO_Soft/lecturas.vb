@@ -1,10 +1,6 @@
 ﻿Imports System.Runtime.InteropServices
 Imports System.IO.Ports
-
-
-
-
-
+Imports System.Data.SQLite
 
 Public Class lecturas
 
@@ -15,16 +11,6 @@ Public Class lecturas
     Public Declare Function GetDesktopWindow Lib "user32" () As Integer
     Public Declare Function SetClassLong Lib "user32" Alias "SetClassLongA" (Dt As IntPtr, IDF As Integer, IGT As Integer) As Integer
     Public Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA" (Wo As IntPtr, Ni As Integer, NK As Integer) As Integer
-
-
-
-
-
-
-
-
-
-
 
     Public Sub New()
         InitializeComponent()
@@ -50,9 +36,140 @@ Public Class lecturas
         Me.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width - 2, Height - 2, 20, 20))
 
         Label6.Text = Now
-        iconoDesconectado()
+        TimerGraficar.Stop()
+
+        CargarcomboUsuario()
+
+
+        ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboBox2.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboBox3.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboBox4.DropDownStyle = ComboBoxStyle.DropDownList
+
 
     End Sub
+
+
+    Public Sub CargarcomboUsuario()
+        Try
+            SQLiteCon.Open()
+
+            'Dim MySQLDA As New SQLiteDataAdapter("SELECT(`nombre_usu` || ' ' || `apellido_usu`) AS ALGO FROM usuario", SQLiteCon)
+
+            Dim MySQLDA As New SQLiteDataAdapter("SELECT `id_usuario`,`nombre_usu` FROM usuario", SQLiteCon)
+
+            Dim table As New DataTable
+            MySQLDA.Fill(table)
+            ComboBox3.DataSource = table
+            ComboBox3.ValueMember = "id_usuario"
+            ComboBox3.DisplayMember = "nombre_usu"
+
+            ComboBox1.SelectedIndex = 0
+            SQLiteCon.Close()
+
+        Catch ex As Exception
+            'MsgBox("Error" & vbCr & ex.Message, MsgBoxStyle.Critical, "Error Message")
+
+        Finally
+            SQLiteCon.Close()
+            SQLliteCMD = Nothing
+        End Try
+    End Sub
+
+
+    Sub cargarfincas()
+        Dim aux_usuario = ComboBox3.SelectedValue.ToString
+
+        Try
+
+            Dim MySQLDA As New SQLiteDataAdapter("SELECT nombre_fin,id_finca FROM finca INNER JOIN usuario WHERE usuario.ID_USUARIO=@Gg and finca.id_usuario=@Gg", SQLiteCon)
+
+            MySQLDA.SelectCommand.Parameters.AddWithValue("@Gg", aux_usuario)
+            Dim ds As New DataSet
+            Dim table As New DataTable
+            MySQLDA.Fill(ds)
+            ComboBox1.DataSource = ds.Tables(0)
+            ComboBox1.DisplayMember = ds.Tables(0).Columns(0).Caption.ToString
+            ComboBox1.ValueMember = "id_finca"
+
+        Catch ex As Exception
+            '  MsgBox("Error" & vbCr & ex.Message, MsgBoxStyle.Critical, "Error Message")
+
+
+        Finally
+            SQLiteCon.Close()
+
+        End Try
+
+    End Sub
+
+    Sub cargarvariedad()
+        Dim aux_usuario = ComboBox1.SelectedValue.ToString
+
+        Try
+
+            Dim MySQLDA As New SQLiteDataAdapter("SELECT nombre_var,id_variedad FROM variedad INNER JOIN finca WHERE variedad.id_finca=@Gg and finca.id_finca=@Gg", SQLiteCon)
+            MySQLDA.SelectCommand.Parameters.AddWithValue("@Gg", aux_usuario)
+            Dim ds As New DataSet
+            Dim table As New DataTable
+
+            MySQLDA.Fill(ds)
+            ComboBox2.DataSource = ds.Tables(0)
+            ComboBox2.DisplayMember = ds.Tables(0).Columns(0).Caption.ToString
+            ComboBox2.ValueMember = "id_variedad"
+
+
+        Catch ex As Exception
+            '  MsgBox("Error" & vbCr & ex.Message, MsgBoxStyle.Critical, "Error Message")
+
+
+        Finally
+            SQLiteCon.Close()
+
+        End Try
+
+    End Sub
+
+
+
+    Sub cargarmuestras()
+        Dim aux_variedad = ComboBox2.SelectedValue.ToString
+
+        Try
+
+            Dim MySQLDA As New SQLiteDataAdapter("SELECT fecha_recepcion,id_muestra FROM muestra INNER JOIN variedad WHERE variedad.id_variedad=@Gg and muestra.id_variedad=@Gg", SQLiteCon)
+            MySQLDA.SelectCommand.Parameters.AddWithValue("@Gg", aux_variedad)
+            Dim ds As New DataSet
+            Dim table As New DataTable
+
+            MySQLDA.Fill(ds)
+            ComboBox4.DataSource = ds.Tables(0)
+            ComboBox4.DisplayMember = ds.Tables(0).Columns(1).Caption.ToString
+            ComboBox4.ValueMember = "id_variedad"
+
+
+        Catch ex As Exception
+            '  MsgBox("Error" & vbCr & ex.Message, MsgBoxStyle.Critical, "Error Message")
+
+
+        Finally
+            SQLiteCon.Close()
+
+        End Try
+
+    End Sub
+
+
+
+
+
+
+
+
+
+
+
+
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
 
@@ -64,27 +181,20 @@ Public Class lecturas
 
     End Sub
 
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerGraficar.Tick
+
+        Try
+            graficar()
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Label6.Text = Now
-        ValidarpH()
-
-        If Principal.SerialPort1.IsOpen Then
-            iconoConectado()
-        Else
-            iconoDesconectado()
-
-        End If
-
-        TextBox2.Text = CO2
-        TextBox1.Text = Temp
-        TextBox3.Text = pH
-
-        TextBox4.Text = comoviene
-
+    Sub graficar()
+        Chart1.Series("Temperatura").Points.AddXY(DateTime.Now.ToString("hh:mm:ss"), Temp)
+        Chart2.Series("Dioxido de Carbono (ppm)").Points.AddXY(DateTime.Now.ToString("hh:mm:ss"), CO2)
+        Chart3.Series("pH").Points.AddXY(DateTime.Now.ToString("hh:mm:ss"), pH)
     End Sub
 
     Sub ValidarpH()
@@ -108,18 +218,76 @@ Public Class lecturas
 
     End Sub
 
-    Sub iconoConectado()
-        PBConectado.Visible = True
-        PBDesconectado.Visible = False
-        Label11.Text = "Conectado"
-        Label11.ForeColor = Color.Green
-    End Sub
-    Sub iconoDesconectado()
-        PBConectado.Visible = False
-        PBDesconectado.Visible = True
-        Label11.Text = "Desconectado"
+
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Button1.Enabled = True
+
+        TimerGraficar.Stop()
+        Label11.Text = "Detenido"
         Label11.ForeColor = Color.Red
+        Chart1.Series(0).Points.Clear()
+        Chart2.Series(0).Points.Clear()
+        Chart3.Series(0).Points.Clear()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        graficar()
+        Button1.Enabled = False
+
+        TimerLectura.Start()
+        TimerGraficar.Start()
+
+
+        Label11.Text = "Iniciado"
+        Label11.ForeColor = Color.Green
+        Dim aux
+
+        aux = NumericUpDown1.Value * 60000
+        TimerGraficar.Interval = aux
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Button1.Enabled = True
+
+        TimerGraficar.Stop()
+        Label11.Text = "Pausa"
+        Label11.ForeColor = Color.DarkOrange
+
+    End Sub
+
+    Private Sub TimerLectura_Tick(sender As Object, e As EventArgs) Handles TimerLectura.Tick
+
+        Label6.Text = Now
+        ValidarpH()
+        TextBox2.Text = CO2
+        TextBox1.Text = Temp
+        TextBox3.Text = pH
     End Sub
 
 
+    Private Sub Chart1_MouseMove(sender As Object, e As MouseEventArgs) Handles Chart1.MouseMove
+        Chart1.Series(0).ToolTip = "#VAL"
+    End Sub
+
+    Private Sub Chart2_MouseMove(sender As Object, e As MouseEventArgs) Handles Chart1.MouseMove
+        Chart2.Series(0).ToolTip = "#VAL"
+    End Sub
+
+    Private Sub Chart3_MouseMove(sender As Object, e As MouseEventArgs) Handles Chart1.MouseMove
+        Chart3.Series(0).ToolTip = "#VAL"
+    End Sub
+
+    Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox3.SelectedIndexChanged
+        cargarfincas()
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        cargarvariedad()
+    End Sub
+
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+        cargarmuestras()
+    End Sub
 End Class

@@ -13,9 +13,9 @@ void setup() {
 void loop() {
 
   ph = random(1, 14);
-  temp = random(1, 100);
+ temp = random(1, 100);
   Co2 = random(10, 1000);
-
+//temp =30;
   enviar =    ph + delimitador + temp + delimitador + Co2;
 
   Serial.println(enviar);

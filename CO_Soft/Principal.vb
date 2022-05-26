@@ -16,12 +16,38 @@
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         'GetSerialPortNames()
         If SerialPort1.IsOpen Then
-            EstadoConx = "Conectado"
+            iconoConectado()
+
         Else
-            EstadoConx = "Desconectado"
+            iconoDesconectado()
+            lecturas.Label11.Text = "Falla de Comunicación"
+            lecturas.Label11.ForeColor = Color.Red
+            lecturas.TimerGraficar.Stop()
+
         End If
 
+
     End Sub
+
+
+    Sub iconoConectado()
+        PBConectado.Visible = True
+        PBDesconectado.Visible = False
+        Label11.Text = "Tarjeta Conectada"
+        Label11.ForeColor = Color.Green
+    End Sub
+    Sub iconoDesconectado()
+        PBConectado.Visible = False
+        PBDesconectado.Visible = True
+        Label11.Text = "Tarjeta Desconectada"
+        Label11.ForeColor = Color.Red
+        Button1.Text = "Conectar"
+        GetSerialPortNames()
+    End Sub
+
+
+
+
 
     Sub Setup_Puerto_Serie()
 
@@ -116,6 +142,7 @@
                 Setup_Puerto_Serie()
                 estado = True
                 EstadoConx = "Conectado"
+                lecturas.Button1.Enabled = True
             Else
 
                 Dim ask As MsgBoxResult = MsgBox("¿Desea cerrar la conexión con el Dispositivo  " & SerialPort1.PortName & " ?", MsgBoxStyle.YesNo)
@@ -135,6 +162,10 @@
 
 
     Private Sub SerialPort1_DataReceived(ByVal sender As Object, ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles SerialPort1.DataReceived
+        lectura_Serial()
+    End Sub
+
+    Sub lectura_Serial()
         Dim auxdatos As String = ""
 
         Try
@@ -149,25 +180,18 @@
             CO2 = Val(Array_trama(2))
             sib += 1
 
-            'comoviene = SerialPort1.ReadLine
-            'Dim Array_trama() As String = Split(comoviene, "/")
-
-            'pH = Val(Array_trama(0))
-            'Temp = Val(Array_trama(1))
-            'CO2 = Val(Array_trama(2))
-
-
-
-
-
-
-
         Catch ex As Exception
             CheckForIllegalCrossThreadCalls = False ' DESACTIVA ERROR POR SUBPROCESO
             ' MsgBox(ex.Message)
         End Try
 
     End Sub
+
+
+
+
+
+
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         fincas.MdiParent = Me
@@ -207,6 +231,10 @@
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
 End Class

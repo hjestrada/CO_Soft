@@ -24,15 +24,15 @@ Partial Class lecturas
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(lecturas))
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea19 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend19 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series19 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea20 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend20 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series20 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea21 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend21 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series21 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -44,13 +44,16 @@ Partial Class lecturas
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Chart3 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -67,24 +70,23 @@ Partial Class lecturas
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.PBConectado = New System.Windows.Forms.PictureBox()
-        Me.PBDesconectado = New System.Windows.Forms.PictureBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TimerGraficar = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerLectura = New System.Windows.Forms.Timer(Me.components)
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.Chart3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Chart2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.PBConectado, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PBDesconectado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -92,9 +94,9 @@ Partial Class lecturas
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(3, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 1012)
+        Me.Panel1.Location = New System.Drawing.Point(0, 1033)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1325, 37)
+        Me.Panel1.Size = New System.Drawing.Size(1431, 37)
         Me.Panel1.TabIndex = 166
         '
         'Label6
@@ -117,7 +119,7 @@ Partial Class lecturas
         Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.Location = New System.Drawing.Point(1292, 3)
+        Me.Button5.Location = New System.Drawing.Point(1398, 3)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(30, 30)
         Me.Button5.TabIndex = 3
@@ -126,11 +128,12 @@ Partial Class lecturas
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Label14)
         Me.Panel2.Controls.Add(Me.Button5)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1325, 37)
+        Me.Panel2.Size = New System.Drawing.Size(1431, 37)
         Me.Panel2.TabIndex = 167
         '
         'TextBox3
@@ -149,7 +152,7 @@ Partial Class lecturas
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(1053, 48)
+        Me.Label3.Location = New System.Drawing.Point(1010, 48)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 31)
         Me.Label3.TabIndex = 7
@@ -201,7 +204,7 @@ Partial Class lecturas
         '
         'Panel4
         '
-        Me.Panel4.Controls.Add(Me.TextBox4)
+        Me.Panel4.Controls.Add(Me.GroupBox4)
         Me.Panel4.Controls.Add(Me.Label12)
         Me.Panel4.Controls.Add(Me.Label5)
         Me.Panel4.Controls.Add(Me.Label4)
@@ -214,14 +217,47 @@ Partial Class lecturas
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 37)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1325, 234)
+        Me.Panel4.Size = New System.Drawing.Size(1431, 234)
         Me.Panel4.TabIndex = 169
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.Label13)
+        Me.GroupBox4.Controls.Add(Me.NumericUpDown1)
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Location = New System.Drawing.Point(1210, 82)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(209, 118)
+        Me.GroupBox4.TabIndex = 13
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Tiempo del Graficador"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(79, 88)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(65, 20)
+        Me.Label13.TabIndex = 12
+        Me.Label13.Text = "Minutos"
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Font = New System.Drawing.Font("Consolas", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NumericUpDown1.Location = New System.Drawing.Point(70, 45)
+        Me.NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.ReadOnly = True
+        Me.NumericUpDown1.Size = New System.Drawing.Size(74, 39)
+        Me.NumericUpDown1.TabIndex = 11
+        Me.NumericUpDown1.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(1057, 200)
+        Me.Label12.Location = New System.Drawing.Point(1065, 48)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(41, 31)
         Me.Label12.TabIndex = 10
@@ -253,8 +289,8 @@ Partial Class lecturas
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Chart3, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Chart1, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Chart2, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Chart1, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel3, 1, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 271)
@@ -263,74 +299,86 @@ Partial Class lecturas
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1325, 741)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1431, 762)
         Me.TableLayoutPanel1.TabIndex = 170
         '
         'Chart3
         '
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart3.ChartAreas.Add(ChartArea1)
+        ChartArea19.Name = "ChartArea1"
+        Me.Chart3.ChartAreas.Add(ChartArea19)
         Me.Chart3.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend1.Name = "Legend1"
-        Me.Chart3.Legends.Add(Legend1)
-        Me.Chart3.Location = New System.Drawing.Point(3, 373)
+        Legend19.Name = "Legend1"
+        Me.Chart3.Legends.Add(Legend19)
+        Me.Chart3.Location = New System.Drawing.Point(3, 384)
         Me.Chart3.Name = "Chart3"
-        Series1.BorderWidth = 3
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
-        Series1.Color = System.Drawing.Color.Black
-        Series1.Legend = "Legend1"
-        Series1.Name = "pH"
-        Series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
-        Me.Chart3.Series.Add(Series1)
-        Me.Chart3.Size = New System.Drawing.Size(656, 365)
-        Me.Chart3.TabIndex = 2
+        Series19.BorderColor = System.Drawing.Color.White
+        Series19.BorderWidth = 3
+        Series19.ChartArea = "ChartArea1"
+        Series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series19.Color = System.Drawing.Color.Blue
+        Series19.Legend = "Legend1"
+        Series19.MarkerBorderColor = System.Drawing.Color.Red
+        Series19.MarkerBorderWidth = 5
+        Series19.MarkerSize = 3
+        Series19.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square
+        Series19.Name = "pH"
+        Series19.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
+        Me.Chart3.Series.Add(Series19)
+        Me.Chart3.Size = New System.Drawing.Size(709, 375)
+        Me.Chart3.TabIndex = 5
         Me.Chart3.Text = "Chart3"
-        '
-        'Chart1
-        '
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea2)
-        Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend2.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend2)
-        Me.Chart1.Location = New System.Drawing.Point(3, 3)
-        Me.Chart1.Name = "Chart1"
-        Series2.BorderColor = System.Drawing.Color.White
-        Series2.BorderWidth = 3
-        Series2.ChartArea = "ChartArea1"
-        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
-        Series2.Color = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Series2.Legend = "Legend1"
-        Series2.MarkerBorderColor = System.Drawing.Color.White
-        Series2.MarkerBorderWidth = 5
-        Series2.Name = "Temperatura"
-        Series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
-        Me.Chart1.Series.Add(Series2)
-        Me.Chart1.Size = New System.Drawing.Size(656, 364)
-        Me.Chart1.TabIndex = 0
-        Me.Chart1.Text = "Chart1"
         '
         'Chart2
         '
-        ChartArea3.Name = "ChartArea1"
-        Me.Chart2.ChartAreas.Add(ChartArea3)
+        ChartArea20.Name = "ChartArea1"
+        Me.Chart2.ChartAreas.Add(ChartArea20)
         Me.Chart2.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend3.Name = "Legend1"
-        Me.Chart2.Legends.Add(Legend3)
-        Me.Chart2.Location = New System.Drawing.Point(665, 3)
+        Legend20.Name = "Legend1"
+        Me.Chart2.Legends.Add(Legend20)
+        Me.Chart2.Location = New System.Drawing.Point(718, 3)
         Me.Chart2.Name = "Chart2"
-        Series3.BorderWidth = 3
-        Series3.ChartArea = "ChartArea1"
-        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
-        Series3.Color = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Series3.Legend = "Legend1"
-        Series3.Name = "Dióxido de Carbono"
-        Series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
-        Me.Chart2.Series.Add(Series3)
-        Me.Chart2.Size = New System.Drawing.Size(657, 364)
-        Me.Chart2.TabIndex = 1
+        Series20.BorderColor = System.Drawing.Color.White
+        Series20.BorderWidth = 3
+        Series20.ChartArea = "ChartArea1"
+        Series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series20.Color = System.Drawing.Color.Gray
+        Series20.Legend = "Legend1"
+        Series20.MarkerBorderColor = System.Drawing.Color.Red
+        Series20.MarkerBorderWidth = 3
+        Series20.MarkerColor = System.Drawing.Color.White
+        Series20.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square
+        Series20.Name = "Dioxido de Carbono (ppm)"
+        Series20.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
+        Me.Chart2.Series.Add(Series20)
+        Me.Chart2.Size = New System.Drawing.Size(710, 375)
+        Me.Chart2.TabIndex = 4
         Me.Chart2.Text = "Chart2"
+        '
+        'Chart1
+        '
+        ChartArea21.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea21)
+        Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
+        Legend21.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend21)
+        Me.Chart1.Location = New System.Drawing.Point(3, 3)
+        Me.Chart1.Name = "Chart1"
+        Series21.BorderColor = System.Drawing.Color.White
+        Series21.BorderWidth = 3
+        Series21.ChartArea = "ChartArea1"
+        Series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series21.Color = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Series21.Legend = "Legend1"
+        Series21.MarkerBorderColor = System.Drawing.Color.Red
+        Series21.MarkerBorderWidth = 3
+        Series21.MarkerColor = System.Drawing.Color.White
+        Series21.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square
+        Series21.Name = "Temperatura"
+        Series21.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
+        Me.Chart1.Series.Add(Series21)
+        Me.Chart1.Size = New System.Drawing.Size(709, 375)
+        Me.Chart1.TabIndex = 0
+        Me.Chart1.Text = "Chart1"
         '
         'Panel3
         '
@@ -339,9 +387,9 @@ Partial Class lecturas
         Me.Panel3.Controls.Add(Me.Panel5)
         Me.Panel3.Controls.Add(Me.GroupBox3)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(665, 373)
+        Me.Panel3.Location = New System.Drawing.Point(718, 384)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(657, 365)
+        Me.Panel3.Size = New System.Drawing.Size(710, 375)
         Me.Panel3.TabIndex = 3
         '
         'GroupBox2
@@ -353,7 +401,7 @@ Partial Class lecturas
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(12, 233)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(636, 124)
+        Me.GroupBox2.Size = New System.Drawing.Size(689, 124)
         Me.GroupBox2.TabIndex = 174
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Acciones"
@@ -503,73 +551,57 @@ Partial Class lecturas
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(657, 37)
+        Me.Panel5.Size = New System.Drawing.Size(710, 37)
         Me.Panel5.TabIndex = 168
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.PBConectado)
-        Me.GroupBox3.Controls.Add(Me.PBDesconectado)
         Me.GroupBox3.Controls.Add(Me.Label11)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(426, 43)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(222, 184)
+        Me.GroupBox3.Size = New System.Drawing.Size(275, 184)
         Me.GroupBox3.TabIndex = 177
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Estado "
-        '
-        'PBConectado
-        '
-        Me.PBConectado.Image = CType(resources.GetObject("PBConectado.Image"), System.Drawing.Image)
-        Me.PBConectado.Location = New System.Drawing.Point(73, 37)
-        Me.PBConectado.Name = "PBConectado"
-        Me.PBConectado.Size = New System.Drawing.Size(82, 96)
-        Me.PBConectado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PBConectado.TabIndex = 177
-        Me.PBConectado.TabStop = False
-        '
-        'PBDesconectado
-        '
-        Me.PBDesconectado.Image = CType(resources.GetObject("PBDesconectado.Image"), System.Drawing.Image)
-        Me.PBDesconectado.Location = New System.Drawing.Point(73, 37)
-        Me.PBDesconectado.Name = "PBDesconectado"
-        Me.PBDesconectado.Size = New System.Drawing.Size(82, 96)
-        Me.PBDesconectado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PBDesconectado.TabIndex = 175
-        Me.PBDesconectado.TabStop = False
+        Me.GroupBox3.Text = "Estado del Proceso"
         '
         'Label11
         '
-        Me.Label11.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(69, 136)
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(13, 71)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(27, 20)
-        Me.Label11.TabIndex = 176
+        Me.Label11.Size = New System.Drawing.Size(28, 24)
+        Me.Label11.TabIndex = 11
         Me.Label11.Text = "---"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Timer1
+        'TimerGraficar
         '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 1000
+        Me.TimerGraficar.Enabled = True
+        Me.TimerGraficar.Interval = 1000
         '
-        'TextBox4
+        'TimerLectura
         '
-        Me.TextBox4.Location = New System.Drawing.Point(744, 15)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(248, 20)
-        Me.TextBox4.TabIndex = 11
+        Me.TimerLectura.Enabled = True
+        Me.TimerLectura.Interval = 500
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label14.Location = New System.Drawing.Point(684, 8)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(79, 20)
+        Me.Label14.TabIndex = 117
+        Me.Label14.Text = "Lecturas"
         '
         'lecturas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1325, 1049)
+        Me.ClientSize = New System.Drawing.Size(1431, 1070)
         Me.ControlBox = False
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Panel4)
@@ -583,12 +615,16 @@ Partial Class lecturas
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.Chart3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -596,8 +632,6 @@ Partial Class lecturas
         Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.PBConectado, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PBDesconectado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -614,9 +648,8 @@ Partial Class lecturas
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents Chart3 As DataVisualization.Charting.Chart
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents TimerGraficar As Timer
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Button3 As Button
     Friend WithEvents Button1 As Button
@@ -633,11 +666,14 @@ Partial Class lecturas
     Friend WithEvents Label8 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Button2 As Button
-    Friend WithEvents Label11 As Label
-    Friend WithEvents PBDesconectado As PictureBox
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents PBConectado As PictureBox
-    Friend WithEvents Chart2 As DataVisualization.Charting.Chart
     Friend WithEvents Label12 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Chart3 As DataVisualization.Charting.Chart
+    Friend WithEvents Chart2 As DataVisualization.Charting.Chart
+    Friend WithEvents Label11 As Label
+    Friend WithEvents TimerLectura As Timer
+    Friend WithEvents Label13 As Label
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents Label14 As Label
 End Class

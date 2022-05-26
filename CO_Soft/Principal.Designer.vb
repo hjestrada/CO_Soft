@@ -49,6 +49,10 @@ Partial Class Principal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.PBConectado = New System.Windows.Forms.PictureBox()
+        Me.PBDesconectado = New System.Windows.Forms.PictureBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -60,7 +64,13 @@ Partial Class Principal
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox5.SuspendLayout()
+        CType(Me.PBConectado, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PBDesconectado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'SerialPort1
+        '
         '
         'Timer1
         '
@@ -104,6 +114,7 @@ Partial Class Principal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Panel1.Controls.Add(Me.GroupBox5)
         Me.Panel1.Controls.Add(Me.GroupBox4)
         Me.Panel1.Controls.Add(Me.GroupBox3)
         Me.Panel1.Controls.Add(Me.GroupBox2)
@@ -123,7 +134,7 @@ Partial Class Principal
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.Location = New System.Drawing.Point(16, 691)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(234, 169)
+        Me.GroupBox4.Size = New System.Drawing.Size(234, 95)
         Me.GroupBox4.TabIndex = 122
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Salidas"
@@ -362,6 +373,53 @@ Partial Class Principal
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.PBConectado)
+        Me.GroupBox5.Controls.Add(Me.PBDesconectado)
+        Me.GroupBox5.Controls.Add(Me.Label11)
+        Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox5.Location = New System.Drawing.Point(16, 802)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(234, 184)
+        Me.GroupBox5.TabIndex = 178
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Estado "
+        '
+        'PBConectado
+        '
+        Me.PBConectado.Image = CType(resources.GetObject("PBConectado.Image"), System.Drawing.Image)
+        Me.PBConectado.Location = New System.Drawing.Point(73, 37)
+        Me.PBConectado.Name = "PBConectado"
+        Me.PBConectado.Size = New System.Drawing.Size(82, 96)
+        Me.PBConectado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PBConectado.TabIndex = 177
+        Me.PBConectado.TabStop = False
+        '
+        'PBDesconectado
+        '
+        Me.PBDesconectado.Image = CType(resources.GetObject("PBDesconectado.Image"), System.Drawing.Image)
+        Me.PBDesconectado.Location = New System.Drawing.Point(73, 37)
+        Me.PBDesconectado.Name = "PBDesconectado"
+        Me.PBDesconectado.Size = New System.Drawing.Size(82, 96)
+        Me.PBDesconectado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PBDesconectado.TabIndex = 175
+        Me.PBDesconectado.TabStop = False
+        '
+        'Label11
+        '
+        Me.Label11.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(30, 142)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(27, 20)
+        Me.Label11.TabIndex = 176
+        Me.Label11.Text = "---"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -391,6 +449,10 @@ Partial Class Principal
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
+        CType(Me.PBConectado, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PBDesconectado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -419,4 +481,8 @@ Partial Class Principal
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents Button8 As Button
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents PBConectado As PictureBox
+    Friend WithEvents PBDesconectado As PictureBox
+    Friend WithEvents Label11 As Label
 End Class

@@ -21,7 +21,6 @@ Module Module1
 
     Public pH As String
     Public Temp As String
-
     Public CO2 As String
 
 
