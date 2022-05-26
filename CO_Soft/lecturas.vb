@@ -232,19 +232,27 @@ Public Class lecturas
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        graficar()
-        Button1.Enabled = False
+        If (ComboBox4.Items.Count <= 0) Then
+            MsgBox("Error no se puede iniciar un proceso de fermentacion si no existe una muestra asociada")
+        Else
+            graficar()
+            Button1.Enabled = False
 
-        TimerLectura.Start()
-        TimerGraficar.Start()
+            TimerLectura.Start()
+            TimerGraficar.Start()
 
 
-        Label11.Text = "Iniciado"
-        Label11.ForeColor = Color.Green
-        Dim aux
+            Label11.Text = "Iniciado"
+            Label11.ForeColor = Color.Green
+            Dim aux
 
-        aux = NumericUpDown1.Value * 60000
-        TimerGraficar.Interval = aux
+            aux = NumericUpDown1.Value * 60000
+            TimerGraficar.Interval = aux
+
+        End If
+
+
+
 
     End Sub
 

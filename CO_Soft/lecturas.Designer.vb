@@ -24,15 +24,15 @@ Partial Class lecturas
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(lecturas))
-        Dim ChartArea19 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend19 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series19 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea20 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend20 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series20 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea21 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend21 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series21 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -74,6 +74,7 @@ Partial Class lecturas
         Me.TimerGraficar = New System.Windows.Forms.Timer(Me.components)
         Me.TimerLectura = New System.Windows.Forms.Timer(Me.components)
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.PanelColor = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -204,6 +205,7 @@ Partial Class lecturas
         '
         'Panel4
         '
+        Me.Panel4.Controls.Add(Me.PanelColor)
         Me.Panel4.Controls.Add(Me.GroupBox4)
         Me.Panel4.Controls.Add(Me.Label12)
         Me.Panel4.Controls.Add(Me.Label5)
@@ -304,78 +306,78 @@ Partial Class lecturas
         '
         'Chart3
         '
-        ChartArea19.Name = "ChartArea1"
-        Me.Chart3.ChartAreas.Add(ChartArea19)
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart3.ChartAreas.Add(ChartArea1)
         Me.Chart3.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend19.Name = "Legend1"
-        Me.Chart3.Legends.Add(Legend19)
+        Legend1.Name = "Legend1"
+        Me.Chart3.Legends.Add(Legend1)
         Me.Chart3.Location = New System.Drawing.Point(3, 384)
         Me.Chart3.Name = "Chart3"
-        Series19.BorderColor = System.Drawing.Color.White
-        Series19.BorderWidth = 3
-        Series19.ChartArea = "ChartArea1"
-        Series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
-        Series19.Color = System.Drawing.Color.Blue
-        Series19.Legend = "Legend1"
-        Series19.MarkerBorderColor = System.Drawing.Color.Red
-        Series19.MarkerBorderWidth = 5
-        Series19.MarkerSize = 3
-        Series19.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square
-        Series19.Name = "pH"
-        Series19.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
-        Me.Chart3.Series.Add(Series19)
+        Series1.BorderColor = System.Drawing.Color.White
+        Series1.BorderWidth = 3
+        Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series1.Color = System.Drawing.Color.Blue
+        Series1.Legend = "Legend1"
+        Series1.MarkerBorderColor = System.Drawing.Color.Red
+        Series1.MarkerBorderWidth = 5
+        Series1.MarkerSize = 3
+        Series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square
+        Series1.Name = "pH"
+        Series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
+        Me.Chart3.Series.Add(Series1)
         Me.Chart3.Size = New System.Drawing.Size(709, 375)
         Me.Chart3.TabIndex = 5
         Me.Chart3.Text = "Chart3"
         '
         'Chart2
         '
-        ChartArea20.Name = "ChartArea1"
-        Me.Chart2.ChartAreas.Add(ChartArea20)
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart2.ChartAreas.Add(ChartArea2)
         Me.Chart2.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend20.Name = "Legend1"
-        Me.Chart2.Legends.Add(Legend20)
+        Legend2.Name = "Legend1"
+        Me.Chart2.Legends.Add(Legend2)
         Me.Chart2.Location = New System.Drawing.Point(718, 3)
         Me.Chart2.Name = "Chart2"
-        Series20.BorderColor = System.Drawing.Color.White
-        Series20.BorderWidth = 3
-        Series20.ChartArea = "ChartArea1"
-        Series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
-        Series20.Color = System.Drawing.Color.Gray
-        Series20.Legend = "Legend1"
-        Series20.MarkerBorderColor = System.Drawing.Color.Red
-        Series20.MarkerBorderWidth = 3
-        Series20.MarkerColor = System.Drawing.Color.White
-        Series20.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square
-        Series20.Name = "Dioxido de Carbono (ppm)"
-        Series20.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
-        Me.Chart2.Series.Add(Series20)
+        Series2.BorderColor = System.Drawing.Color.White
+        Series2.BorderWidth = 3
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series2.Color = System.Drawing.Color.Gray
+        Series2.Legend = "Legend1"
+        Series2.MarkerBorderColor = System.Drawing.Color.Red
+        Series2.MarkerBorderWidth = 3
+        Series2.MarkerColor = System.Drawing.Color.White
+        Series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square
+        Series2.Name = "Dioxido de Carbono (ppm)"
+        Series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
+        Me.Chart2.Series.Add(Series2)
         Me.Chart2.Size = New System.Drawing.Size(710, 375)
         Me.Chart2.TabIndex = 4
         Me.Chart2.Text = "Chart2"
         '
         'Chart1
         '
-        ChartArea21.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea21)
+        ChartArea3.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea3)
         Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend21.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend21)
+        Legend3.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend3)
         Me.Chart1.Location = New System.Drawing.Point(3, 3)
         Me.Chart1.Name = "Chart1"
-        Series21.BorderColor = System.Drawing.Color.White
-        Series21.BorderWidth = 3
-        Series21.ChartArea = "ChartArea1"
-        Series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
-        Series21.Color = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Series21.Legend = "Legend1"
-        Series21.MarkerBorderColor = System.Drawing.Color.Red
-        Series21.MarkerBorderWidth = 3
-        Series21.MarkerColor = System.Drawing.Color.White
-        Series21.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square
-        Series21.Name = "Temperatura"
-        Series21.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
-        Me.Chart1.Series.Add(Series21)
+        Series3.BorderColor = System.Drawing.Color.White
+        Series3.BorderWidth = 3
+        Series3.ChartArea = "ChartArea1"
+        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
+        Series3.Color = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Series3.Legend = "Legend1"
+        Series3.MarkerBorderColor = System.Drawing.Color.Red
+        Series3.MarkerBorderWidth = 3
+        Series3.MarkerColor = System.Drawing.Color.White
+        Series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square
+        Series3.Name = "Temperatura"
+        Series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
+        Me.Chart1.Series.Add(Series3)
         Me.Chart1.Size = New System.Drawing.Size(709, 375)
         Me.Chart1.TabIndex = 0
         Me.Chart1.Text = "Chart1"
@@ -597,6 +599,13 @@ Partial Class lecturas
         Me.Label14.TabIndex = 117
         Me.Label14.Text = "Lecturas"
         '
+        'PanelColor
+        '
+        Me.PanelColor.Location = New System.Drawing.Point(958, 206)
+        Me.PanelColor.Name = "PanelColor"
+        Me.PanelColor.Size = New System.Drawing.Size(246, 15)
+        Me.PanelColor.TabIndex = 14
+        '
         'lecturas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -676,4 +685,5 @@ Partial Class lecturas
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label14 As Label
+    Friend WithEvents PanelColor As Panel
 End Class
