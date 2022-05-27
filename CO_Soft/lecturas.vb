@@ -45,7 +45,7 @@ Public Class lecturas
         ComboBox2.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBox3.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBox4.DropDownStyle = ComboBoxStyle.DropDownList
-
+        ColorPh()
 
     End Sub
 
@@ -195,6 +195,8 @@ Public Class lecturas
         Chart1.Series("Temperatura").Points.AddXY(DateTime.Now.ToString("hh:mm:ss"), Temp)
         Chart2.Series("Dioxido de Carbono (ppm)").Points.AddXY(DateTime.Now.ToString("hh:mm:ss"), CO2)
         Chart3.Series("pH").Points.AddXY(DateTime.Now.ToString("hh:mm:ss"), pH)
+        insertarLecturas()
+
     End Sub
 
     Sub ValidarpH()
@@ -266,12 +268,130 @@ Public Class lecturas
     End Sub
 
     Private Sub TimerLectura_Tick(sender As Object, e As EventArgs) Handles TimerLectura.Tick
-
+        ColorPh()
         Label6.Text = Now
         ValidarpH()
         TextBox2.Text = CO2
         TextBox1.Text = Temp
         TextBox3.Text = pH
+    End Sub
+
+
+
+
+
+    Sub insertarLecturas()
+
+
+        SQLiteCon.Close()
+        Try
+            SQLiteCon.Open()
+            SQLliteCMD = New SQLiteCommand
+
+            With SQLliteCMD
+
+                .CommandText = " INSERT INTO lectura (`id_lectura`, `ph`,`temperatura`,`dioxido`,'fecha_lectura','id_muestra')
+                                            VALUES (NULL,@ph,@temperatura,@dioxido,@fecha_lectura,@id_muestra)"
+                .Connection = SQLiteCon
+                .Parameters.AddWithValue("@ph", pH)
+                .Parameters.AddWithValue("@temperatura", Temp)
+                .Parameters.AddWithValue("@dioxido", CO2)
+                .Parameters.AddWithValue("@fecha_lectura", Now)
+                .Parameters.AddWithValue("@id_muestra", ComboBox4.Text)
+                .ExecuteNonQuery()
+
+            End With
+            SQLiteCon.Close()
+        Catch ex As Exception
+            SQLiteCon.Close()
+            '  MsgBox("Descripcion del error:" & ex.Message)
+            Return
+        End Try
+        SQLiteCon.Close()
+
+    End Sub
+
+    Sub ColorPh()
+
+        Dim auxcolor As Decimal = Convert.ToDecimal(pH)
+
+        If (auxcolor >= 0 And auxcolor <= 0.99) Then
+            Me.PanelColor.BackColor = Color.FromArgb(239, 28, 35)
+        End If
+
+
+        If (auxcolor >= 1 And auxcolor <= 1.99) Then
+
+            Me.PanelColor.BackColor = Color.FromArgb(255, 122, 27)
+        End If
+
+        If (auxcolor >= 2 And auxcolor <= 2.99) Then
+            Me.PanelColor.BackColor = Color.FromArgb(245, 198, 20)
+
+        End If
+
+
+        If (auxcolor >= 3 And auxcolor <= 3.99) Then
+            Me.PanelColor.BackColor = Color.FromArgb(246, 229, 1)
+        End If
+
+
+        If (auxcolor >= 4 And auxcolor <= 4.99) Then
+            Me.PanelColor.BackColor = Color.FromArgb(183, 211, 51)
+        End If
+
+
+        If (auxcolor >= 5 And auxcolor <= 5.99) Then
+            Me.PanelColor.BackColor = Color.FromArgb(134, 193, 67)
+        End If
+
+
+        If (auxcolor >= 6 And auxcolor <= 6.99) Then
+            Me.PanelColor.BackColor = Color.FromArgb(80, 184, 73)
+        End If
+
+
+        If (auxcolor >= 7 And auxcolor <= 7.99) Then
+            Me.PanelColor.BackColor = Color.FromArgb(53, 169, 68)
+        End If
+
+
+        If (auxcolor >= 8 And auxcolor <= 8.99) Then
+            Me.PanelColor.BackColor = Color.FromArgb(36, 180, 111)
+        End If
+
+
+        If (auxcolor >= 9 And auxcolor <= 9.99) Then
+            Me.PanelColor.BackColor = Color.FromArgb(10, 186, 183)
+        End If
+
+
+        If (auxcolor >= 10 And auxcolor <= 10.99) Then
+            Me.PanelColor.BackColor = Color.FromArgb(70, 144, 205)
+        End If
+
+
+        If (auxcolor >= 11 And auxcolor <= 11.99) Then
+            Me.PanelColor.BackColor = Color.FromArgb(58, 84, 161)
+        End If
+
+
+        If (auxcolor >= 12 And auxcolor <= 12.99) Then
+            Me.PanelColor.BackColor = Color.FromArgb(89, 81, 158)
+        End If
+
+
+        If (auxcolor >= 13 And auxcolor <= 13.99) Then
+            Me.PanelColor.BackColor = Color.FromArgb(99, 69, 157)
+        End If
+
+
+        If (auxcolor >= 14 And auxcolor <= 14.99) Then
+            Me.PanelColor.BackColor = Color.FromArgb(66, 46, 131)
+
+        End If
+
+
     End Sub
 
 
@@ -297,5 +417,9 @@ Public Class lecturas
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
         cargarmuestras()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs)
+        Me.PanelColor.BackColor = Color.FromArgb(239, 28, 35)
     End Sub
 End Class

@@ -8,9 +8,6 @@ Public Class Clase1
     Sub consultaDGW(ByVal Tabla As DataGridView, ByVal Sql As String)
 
         Try
-
-
-
             ':::Instruccion Try para capturar errores
 
             ':::Creamos el objeto DataAdapter y le pasamos los dos parametros (Instruccion, conexión)
@@ -26,6 +23,15 @@ Public Class Clase1
 
         End Try
 
+
     End Sub
+
+
+
+
+
+
+
+
 
 End Class
