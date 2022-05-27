@@ -422,4 +422,8 @@ Public Class lecturas
     Private Sub Button4_Click(sender As Object, e As EventArgs)
         Me.PanelColor.BackColor = Color.FromArgb(239, 28, 35)
     End Sub
+
+    Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel4.Paint
+
+    End Sub
 End Class
