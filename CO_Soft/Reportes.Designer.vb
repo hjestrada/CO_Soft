@@ -47,6 +47,7 @@ Partial Class Reportes
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -59,10 +60,9 @@ Partial Class Reportes
         '
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView2.Location = New System.Drawing.Point(0, 0)
+        Me.DataGridView2.Location = New System.Drawing.Point(12, 54)
         Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(1100, 618)
+        Me.DataGridView2.Size = New System.Drawing.Size(658, 609)
         Me.DataGridView2.TabIndex = 17
         '
         'GroupBox1
@@ -73,10 +73,11 @@ Partial Class Reportes
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker4)
         Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.GroupBox1.Location = New System.Drawing.Point(13, 207)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(398, 214)
+        Me.GroupBox1.Size = New System.Drawing.Size(398, 218)
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Filtro por Fecha"
@@ -95,7 +96,7 @@ Partial Class Reportes
         '
         Me.DateTimePicker3.Location = New System.Drawing.Point(12, 119)
         Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(352, 20)
+        Me.DateTimePicker3.Size = New System.Drawing.Size(352, 26)
         Me.DateTimePicker3.TabIndex = 3
         '
         'Label1
@@ -103,7 +104,7 @@ Partial Class Reportes
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(8, 34)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(68, 13)
+        Me.Label1.Size = New System.Drawing.Size(99, 20)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Fecha Inicio:"
         '
@@ -111,7 +112,7 @@ Partial Class Reportes
         '
         Me.DateTimePicker4.Location = New System.Drawing.Point(12, 57)
         Me.DateTimePicker4.Name = "DateTimePicker4"
-        Me.DateTimePicker4.Size = New System.Drawing.Size(352, 20)
+        Me.DateTimePicker4.Size = New System.Drawing.Size(352, 26)
         Me.DateTimePicker4.TabIndex = 0
         '
         'Label2
@@ -119,7 +120,7 @@ Partial Class Reportes
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(8, 96)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(65, 13)
+        Me.Label2.Size = New System.Drawing.Size(96, 20)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Fecha Final:"
         '
@@ -128,6 +129,7 @@ Partial Class Reportes
         Me.GroupBox2.Controls.Add(Me.Button5)
         Me.GroupBox2.Controls.Add(Me.Button7)
         Me.GroupBox2.Controls.Add(Me.Button8)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.GroupBox2.Location = New System.Drawing.Point(13, 427)
         Me.GroupBox2.Name = "GroupBox2"
@@ -171,7 +173,7 @@ Partial Class Reportes
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(8, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label14)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
@@ -185,7 +187,7 @@ Partial Class Reportes
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label14.Location = New System.Drawing.Point(444, 9)
+        Me.Label14.Location = New System.Drawing.Point(501, 7)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(83, 20)
         Me.Label14.TabIndex = 117
@@ -215,7 +217,7 @@ Partial Class Reportes
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel1.Location = New System.Drawing.Point(676, 37)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(424, 581)
+        Me.Panel1.Size = New System.Drawing.Size(424, 669)
         Me.Panel1.TabIndex = 169
         '
         'GroupBox3
@@ -312,11 +314,21 @@ Partial Class Reportes
         Me.ComboBox2.Size = New System.Drawing.Size(267, 28)
         Me.ComboBox2.TabIndex = 171
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(8, Byte), Integer))
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel3.Location = New System.Drawing.Point(0, 669)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(676, 37)
+        Me.Panel3.TabIndex = 170
+        '
         'Reportes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1100, 618)
+        Me.ClientSize = New System.Drawing.Size(1100, 706)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.DataGridView2)
@@ -363,4 +375,5 @@ Partial Class Reportes
     Friend WithEvents ComboBox4 As ComboBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Panel3 As Panel
 End Class
