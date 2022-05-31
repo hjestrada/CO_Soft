@@ -95,7 +95,7 @@ Partial Class lecturas
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(5, Byte), Integer), CType(CType(3, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 1033)
+        Me.Panel1.Location = New System.Drawing.Point(0, 1016)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1431, 37)
         Me.Panel1.TabIndex = 166
@@ -319,7 +319,7 @@ Partial Class lecturas
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1431, 762)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1431, 745)
         Me.TableLayoutPanel1.TabIndex = 170
         '
         'Chart3
@@ -329,7 +329,7 @@ Partial Class lecturas
         Me.Chart3.Dock = System.Windows.Forms.DockStyle.Fill
         Legend1.Name = "Legend1"
         Me.Chart3.Legends.Add(Legend1)
-        Me.Chart3.Location = New System.Drawing.Point(3, 384)
+        Me.Chart3.Location = New System.Drawing.Point(3, 375)
         Me.Chart3.Name = "Chart3"
         Series1.BorderColor = System.Drawing.Color.White
         Series1.BorderWidth = 3
@@ -344,7 +344,7 @@ Partial Class lecturas
         Series1.Name = "pH"
         Series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
         Me.Chart3.Series.Add(Series1)
-        Me.Chart3.Size = New System.Drawing.Size(709, 375)
+        Me.Chart3.Size = New System.Drawing.Size(709, 367)
         Me.Chart3.TabIndex = 5
         Me.Chart3.Text = "Chart3"
         '
@@ -370,7 +370,7 @@ Partial Class lecturas
         Series2.Name = "Dioxido de Carbono (ppm)"
         Series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
         Me.Chart2.Series.Add(Series2)
-        Me.Chart2.Size = New System.Drawing.Size(710, 375)
+        Me.Chart2.Size = New System.Drawing.Size(710, 366)
         Me.Chart2.TabIndex = 4
         Me.Chart2.Text = "Chart2"
         '
@@ -396,7 +396,7 @@ Partial Class lecturas
         Series3.Name = "Temperatura"
         Series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime
         Me.Chart1.Series.Add(Series3)
-        Me.Chart1.Size = New System.Drawing.Size(709, 375)
+        Me.Chart1.Size = New System.Drawing.Size(709, 366)
         Me.Chart1.TabIndex = 0
         Me.Chart1.Text = "Chart1"
         '
@@ -407,9 +407,9 @@ Partial Class lecturas
         Me.Panel3.Controls.Add(Me.Panel5)
         Me.Panel3.Controls.Add(Me.GroupBox3)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(718, 384)
+        Me.Panel3.Location = New System.Drawing.Point(718, 375)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(710, 375)
+        Me.Panel3.Size = New System.Drawing.Size(710, 367)
         Me.Panel3.TabIndex = 3
         '
         'GroupBox2
@@ -610,7 +610,7 @@ Partial Class lecturas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1431, 1070)
+        Me.ClientSize = New System.Drawing.Size(1431, 1053)
         Me.ControlBox = False
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Panel4)
