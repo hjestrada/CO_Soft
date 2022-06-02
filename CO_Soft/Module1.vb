@@ -11,7 +11,8 @@ Imports System.IO
 Imports System.Data.OleDb
 
 Module Module1
-    Public DB_Path As String = "Data Source=" & Application.StartupPath & "\fermentador_memo.s3db;"
+    'Public DB_Path As String = "Data Source=" & Application.StartupPath & "\fermentador_memo.s3db;"
+    Public DB_Path As String = "Data Source=fermentador_memo.s3db;"
     Public SQLiteCon As New SQLiteConnection(DB_Path)
     Public SQLliteCMD As New SQLiteCommand
     Public SQLiteDA As New SQLiteDataAdapter

@@ -101,7 +101,7 @@ Public Class usuarios
 
                 Catch ex As Exception
                     SQLiteCon.Close()
-                    ' MsgBox("Descripcion del error:" & ex.Message)
+                    MsgBox("Descripcion del error:" & ex.Message)
                     Return
                 End Try
                 SQLiteCon.Close()

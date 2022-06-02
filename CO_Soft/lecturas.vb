@@ -68,7 +68,7 @@ Public Class lecturas
             SQLiteCon.Close()
 
         Catch ex As Exception
-            'MsgBox("Error" & vbCr & ex.Message, MsgBoxStyle.Critical, "Error Message")
+            '  MsgBox("Error" & vbCr & ex.Message, MsgBoxStyle.Critical, "Error Message")
 
         Finally
             SQLiteCon.Close()
@@ -93,7 +93,7 @@ Public Class lecturas
             ComboBox1.ValueMember = "id_finca"
 
         Catch ex As Exception
-            '  MsgBox("Error" & vbCr & ex.Message, MsgBoxStyle.Critical, "Error Message")
+            ' MsgBox("Error" & vbCr & ex.Message, MsgBoxStyle.Critical, "Error Message")
 
 
         Finally
@@ -120,7 +120,7 @@ Public Class lecturas
 
 
         Catch ex As Exception
-            '  MsgBox("Error" & vbCr & ex.Message, MsgBoxStyle.Critical, "Error Message")
+            '   MsgBox("Error" & vbCr & ex.Message, MsgBoxStyle.Critical, "Error Message")
 
 
         Finally
@@ -149,7 +149,7 @@ Public Class lecturas
 
 
         Catch ex As Exception
-            '  MsgBox("Error" & vbCr & ex.Message, MsgBoxStyle.Critical, "Error Message")
+            ' MsgBox("Error" & vbCr & ex.Message, MsgBoxStyle.Critical, "Error Message")
 
 
         Finally
@@ -304,7 +304,7 @@ Public Class lecturas
             SQLiteCon.Close()
         Catch ex As Exception
             SQLiteCon.Close()
-            '  MsgBox("Descripcion del error:" & ex.Message)
+            'MsgBox("Descripcion del error:" & ex.Message)
             Return
         End Try
         SQLiteCon.Close()
