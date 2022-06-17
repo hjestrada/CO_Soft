@@ -11,8 +11,9 @@ Module ExpoExcel
         ElGrid.Columns(0).Name = "ID lECTURA"
         ElGrid.Columns(1).Name = "pH"
         ElGrid.Columns(2).Name = "Temperatura"
-        ElGrid.Columns(3).Name = "Fecha Lectura"
-
+        ElGrid.Columns(3).Name = "Dioxido de Carbono"
+        ElGrid.Columns(4).Name = "Fecha Lectura"
+        ElGrid.Columns(5).Name = "Id_Muestra"
 
 
         Dim exApp As New Microsoft.Office.Interop.Excel.Application

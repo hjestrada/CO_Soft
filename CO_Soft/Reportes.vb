@@ -222,10 +222,10 @@ Public Class Reportes
 
 
             Label1.Text = "Inciando Proceso de Exportación a PDF"
-        'Label1.ForeColor = Color.YELLOW
+            'Label1.ForeColor = Color.YELLOW
 
 
-        Try
+            'Try
 
             ' Intentar generar el documento.
             Dim doc As New Document(PageSize.LETTER.Rotate(), 10, 10, 10, 10)
@@ -237,12 +237,12 @@ Public Class Reportes
             ExportarDatosPDF(doc)
             doc.Close()
             Process.Start(filename)
-        Catch ex As Exception
-            'Si el intento es fallido, mostrar MsgBox.
-            MessageBox.Show("No se puede generar el documento PDF.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+                'Catch ex As Exception
+                'Si el intento es fallido, mostrar MsgBox.
+                ' MessageBox.Show("No se puede generar el documento PDF.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'End Try
 
-            Label1.Text = "Datos exportados a PDF exitosamente"
+                Label1.Text = "Datos exportados a PDF exitosamente"
 
         End If
 
