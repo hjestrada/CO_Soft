@@ -200,8 +200,8 @@
 
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles Me.Load
         GetSerialPortNames()
-        lecturas.MdiParent = Me
-        lecturas.Show()
+        Dash.MdiParent = Me
+        Dash.Show()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -215,8 +215,8 @@
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        lecturas.MdiParent = Me
-        lecturas.Show()
+        Dash.MdiParent = Me
+        Dash.Show()
     End Sub
 
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint

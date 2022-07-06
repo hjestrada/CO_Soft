@@ -64,9 +64,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.Soft_Fermentacion.My.MySettings
+        Friend ReadOnly Property Settings() As Global.MemorysSecador.My.MySettings
             Get
-                Return Global.Soft_Fermentacion.My.MySettings.Default
+                Return Global.MemorysSecador.My.MySettings.Default
             End Get
         End Property
     End Module

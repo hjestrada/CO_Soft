@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Soft_Fermentacion.Principal
+            Me.MainForm = Global.MemorysSecador.Principal
         End Sub
     End Class
 End Namespace

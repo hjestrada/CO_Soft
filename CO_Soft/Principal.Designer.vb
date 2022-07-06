@@ -251,7 +251,7 @@ Partial Class Principal
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(211, 39)
         Me.Button7.TabIndex = 11
-        Me.Button7.Text = "Lecturas"
+        Me.Button7.Text = "Monitor"
         Me.Button7.UseVisualStyleBackColor = False
         '
         'GroupBox2
@@ -424,7 +424,6 @@ Partial Class Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1746, 1174)
         Me.Controls.Add(Me.Panel1)
